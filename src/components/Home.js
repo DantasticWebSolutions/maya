@@ -5,7 +5,7 @@ const Home = () => {
   return (
     <div>
       THIS IS THE HOME PAGE
-      <Link to="/">Go to Tv PAGE</Link>
+      <Link to="/tv">Go to Tv PAGE</Link>
     </div>
   );
 };
