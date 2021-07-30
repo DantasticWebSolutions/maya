@@ -15,6 +15,7 @@ export default function Home() {
             link,
             titleTv,
             descriptionTv,
+
             imageHome{
                 asset->{
                     _id,
@@ -22,6 +23,22 @@ export default function Home() {
                 }
             },
             imageTv{
+                asset->{
+                    _id,
+                    url
+                }
+            },
+            titleRadio,
+            descriptionRadio,
+            imageRadio{
+                asset->{
+                    _id,
+                    url
+                }
+            },
+            titleArticles,
+            descriptionArticles,
+            imageArticles{
                 asset->{
                     _id,
                     url
@@ -66,7 +83,43 @@ export default function Home() {
                   alt="TV Portfolio"
                 />
                 <div className="title">{post.titleTv}</div>
-                <div className="description">{post.titleTv}</div>
+                <div className="description">
+                  <BlockContent
+                    blocks={post.descriptionTv}
+                    projectId={sanityClient.projectId}
+                    dataset={sanityClient.dataset}
+                  />
+                </div>
+              </div>
+              <div className="sector">
+                <img
+                  className="imgSector"
+                  src={post.imageRadio.asset.url}
+                  alt="Radio Portfolio"
+                />
+                <div className="title">{post.titleRadio}</div>
+                <div className="description">
+                  <BlockContent
+                    blocks={post.descriptionTv}
+                    projectId={sanityClient.projectId}
+                    dataset={sanityClient.dataset}
+                  />
+                </div>
+              </div>
+              <div className="sector">
+                <img
+                  className="imgSector"
+                  src={post.imageArticles.asset.url}
+                  alt="Articles Portfolio"
+                />
+                <div className="title">{post.titleArticles}</div>
+                <div className="description">
+                  <BlockContent
+                    blocks={post.descriptionArticles}
+                    projectId={sanityClient.projectId}
+                    dataset={sanityClient.dataset}
+                  />
+                </div>
               </div>
             </div>
           </div>
