@@ -175,11 +175,13 @@ a {
   margin-left: 5px;
 }
 .arrowMenu.open {
-  transform: rotate(90deg) !important;
+  margin-top: 100px;
+  transition: all 2s ease-in-out;
 }
 
 .menuContainer ul {
   list-style-type: none;
+  transition: all 2s ease;
 }
 .menuContainer ul.open li {
   display: block;

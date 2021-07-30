@@ -13,6 +13,7 @@ const Navbar = () => {
 
   const showPortfolio = () => {
     setTogglePortfolios(!togglePortfolio);
+    setToggle(true);
   };
   return (
     <>
@@ -33,7 +34,7 @@ const Navbar = () => {
         <div className="share">Share</div>
       </div>
       <div className={`menuContainer ${toggle ? "open" : "close"}`}>
-        <div onClick={showMenu} className="menuSlide">
+        <div className="menuSlide">
           <div className="links">
             <Link onClick={showMenu} to={"/"}>
               <p>Home</p>
@@ -61,7 +62,7 @@ const Navbar = () => {
               </li>
               <li>
                 <Link onClick={showMenu} to={"/Articles"}>
-                  <p>Radio</p>
+                  <p>Articles</p>
                 </Link>
               </li>
             </ul>
