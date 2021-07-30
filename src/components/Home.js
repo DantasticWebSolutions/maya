@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 
+//SANITY
 import sanityClient from "../client.js";
 import BlockContent from "@sanity/block-content-to-react";
 
