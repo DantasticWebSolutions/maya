@@ -30,10 +30,10 @@ export default function Post() {
           using Adobe Premier Pro.
         </p>
       </div>
-      <div className="blogContenitor">
+      <div className="progettiContainer">
         {allPostsData &&
           allPostsData.map((post) => (
-            <div className="tvProjectsContenitor">
+            <div>
               <p>{post.title}</p>
               <BlockContent
                 blocks={post.description}
