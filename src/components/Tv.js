@@ -33,14 +33,24 @@ export default function Post() {
       <div className="progettiContainer">
         {allPostsData &&
           allPostsData.map((post) => (
-            <div>
-              <p>{post.title}</p>
-              <BlockContent
-                blocks={post.description}
-                projectId={sanityClient.projectId}
-                dataset={sanityClient.dataset}
-              />
-              <p>{post.link}</p>
+            <div className="progetto">
+              <div className="text">
+                <p>{post.title}</p>
+                <BlockContent
+                  blocks={post.description}
+                  projectId={sanityClient.projectId}
+                  dataset={sanityClient.dataset}
+                />
+              </div>
+
+              <iframe
+                className="frame"
+                src={post.link}
+                title={post.title}
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
             </div>
           ))}
       </div>

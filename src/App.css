@@ -165,29 +165,41 @@ a {
   text-decoration: none;
 }
 
+.menuContainer .menuPortfolios a {
+  transition: all 2s ease-in !important;
+}
 .menuContainer .menuPortfolios {
   background-color: #000 !important;
   z-index: 5 !important;
   cursor: pointer;
   pointer-events: auto;
+  display: flex;
+  flex-direction: row;
+  transition: all 2s ease-in;
 }
 .arrowMenu {
-  margin-left: 5px;
+  transition: all 0.2s ease-in;
 }
 .arrowMenu.open {
-  margin-top: 100px;
-  transition: all 2s ease-in-out;
+  transform: rotate(90deg);
+}
+.arrowMenu.close {
+  transform: rotate(0deg);
+  margin-top: -2px;
 }
 
 .menuContainer ul {
   list-style-type: none;
-  transition: all 2s ease;
 }
 .menuContainer ul.open li {
-  display: block;
+  transition: all 0.3s ease-in;
+  opacity: 1;
+  /* display: block; */
 }
 .menuContainer ul.close li {
-  display: none;
+  transition: all 0.3s ease-in;
+  /* display: none; */
+  opacity: 0;
 }
 /* FOOTER */
 
@@ -196,6 +208,7 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 50px;
 }
 
 .footer {
@@ -205,4 +218,32 @@ a {
   align-items: center;
   border-top: #000 solid 2px;
   padding: 40px 0;
+}
+
+/* ### TV ###  */
+
+.progetto {
+  width: 100vw;
+  height: calc(100vh - 65px);
+  display: flex;
+  flex-direction: column;
+}
+.progetto .text {
+  width: 100%;
+}
+
+.frame {
+  width: 100%;
+  height: 100%;
+  padding: 100px 0;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
 }

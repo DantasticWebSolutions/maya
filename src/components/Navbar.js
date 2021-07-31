@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { SocialIcon } from "react-social-icons";
+import Contact from "./Contact";
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
@@ -27,7 +27,9 @@ const Navbar = () => {
 
         {/* LOGO */}
         <Link to="/">
-          <div className="logo">MAYA</div>
+          <div onClick={() => setToggle(false)} className="logo">
+            MAYA
+          </div>
         </Link>
 
         {/* SHARE */}
@@ -40,14 +42,14 @@ const Navbar = () => {
               <p>Home</p>
             </Link>
             <div className="menuPortfolios" onClick={showPortfolio}>
-              <p>
-                PORTFOLIOS
-                <span
-                  className={`arrowMenu ${togglePortfolio ? "open" : "close"}`}
-                >
-                  &gt;
-                </span>
-              </p>
+              <p className="noselect">PORTFOLIOS</p>
+              <div
+                className={`arrowMenu noselect ${
+                  togglePortfolio ? "open" : "close"
+                }`}
+              >
+                <p>&gt;</p>
+              </div>
             </div>
             <ul className={`${togglePortfolio ? "open" : "close"}`}>
               <li>
@@ -68,23 +70,7 @@ const Navbar = () => {
             </ul>
           </div>
 
-          <div className="icons">
-            <SocialIcon
-              url="https://www.facebook.com/"
-              fgColor="#fff"
-              className="socialIcon"
-            />
-            <SocialIcon
-              url="https://www.linkedin.com/"
-              fgColor="#fff"
-              className="socialIcon"
-            />
-            <SocialIcon
-              url="https://www.instagram.com/eatingwithelisa/"
-              fgColor="#fff"
-              className="socialIcon"
-            />
-          </div>
+          <Contact />
         </div>
       </div>
     </>
