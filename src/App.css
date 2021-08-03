@@ -41,12 +41,11 @@
 .navbar {
   height: 65px;
   width: 100vw;
-  background-color: #000000;
-  color: aliceblue;
+  background-color: #fff;
+  color: #000000 !important;
   position: fixed;
   top: 0;
   z-index: 2;
-
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -246,4 +245,27 @@ a {
   -ms-user-select: none; /* Internet Explorer/Edge */
   user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome, Edge, Opera and Firefox */
+}
+
+/* ### CONTACT ###   */
+
+.contact {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+@media screen and (max-width: 800px) {
+  .contact {
+    flex-direction: column;
+  }
+}
+
+.infoContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
