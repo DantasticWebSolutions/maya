@@ -3,6 +3,7 @@ import { Form, Input, TextArea, Button } from "semantic-ui-react";
 import emailjs from "emailjs-com";
 import Swal from "sweetalert2";
 import { SocialIcon } from "react-social-icons";
+
 // import "semantic-ui-css/semantic.min.css";
 
 const SERVICE_ID = "mayaRussellSmith";
@@ -74,9 +75,18 @@ const Contact = () => {
               placeholder="Insert your message"
               required
             />
-            <Button type="submit" color="green">
+            <button type="submit" className="button">
+              <div id="dub-arrow">
+                <img
+                  src="https://github.com/atloomer/atloomer.github.io/blob/master/img/iconmonstr-arrow-48-240.png?raw=true"
+                  alt=""
+                />
+              </div>
+              <a>Submit</a>
+            </button>
+            {/* <Button className="button" type="submit">
               Submit
-            </Button>
+            </Button> */}
           </Form>
 
           <div className="infoContainer">
@@ -88,17 +98,23 @@ const Contact = () => {
             </a>
             <div className="icons">
               <SocialIcon
-                url="https://www.facebook.com/"
+                url="https://www.instagram.com/mayamoz/"
                 fgColor="#fff"
                 className="socialIcon"
               />
               <SocialIcon
-                url="https://www.linkedin.com/"
+                url="https://www.youtube.com/channel/UCLBWjv_UpYZeCahMpPHhypQ"
+                fgColor="#fff"
+                className="socialIcon"
+              />
+
+              <SocialIcon
+                url="https://www.facebook.com/maya.russellsmith/"
                 fgColor="#fff"
                 className="socialIcon"
               />
               <SocialIcon
-                url="https://www.instagram.com/eatingwithelisa/"
+                url="https://twitter.com/mrussellsmith"
                 fgColor="#fff"
                 className="socialIcon"
               />

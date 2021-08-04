@@ -1,15 +1,23 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import Contact from "./Contact";
+import { useDetectOutsideClick } from "./useDetectOutsideClick";
 
 const Navbar = () => {
-  const [toggle, setToggle] = useState(false);
+  const dropdownRef = useRef(null);
+  const [toggle, setToggle] = useDetectOutsideClick(dropdownRef, false);
+  // const [toggle, setToggle] = useState(false);
 
   const showMenu = () => {
     setToggle(!toggle);
+    if (document.body.style.overflow !== "hidden") {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "scroll";
+    }
   };
 
-  const [togglePortfolio, setTogglePortfolios] = useState(false);
+  const [togglePortfolio, setTogglePortfolios] = useState(true);
 
   const showPortfolio = () => {
     setTogglePortfolios(!togglePortfolio);
@@ -20,20 +28,17 @@ const Navbar = () => {
       <div className="navbar">
         {/* MENU */}
 
+        {/* LOGO */}
+        <Link to="/">
+          <div onClick={() => setToggle(false)} className="logo">
+            Maya Russell-Smith: Broadcast Journalist
+          </div>
+        </Link>
+
         <div className="menu" onClick={showMenu}>
           <div className={`line line1 ${toggle ? "open" : "close"}`}></div>
           <div className={`line line2 ${toggle ? "open" : "close"}`}></div>
         </div>
-
-        {/* LOGO */}
-        <Link to="/">
-          <div onClick={() => setToggle(false)} className="logo">
-            MAYA
-          </div>
-        </Link>
-
-        {/* SHARE */}
-        <div className="share">Share</div>
       </div>
       <div className={`menuContainer ${toggle ? "open" : "close"}`}>
         <div className="menuSlide">

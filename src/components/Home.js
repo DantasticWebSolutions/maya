@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-
+import { SocialIcon } from "react-social-icons";
 //SANITY
 import sanityClient from "../client.js";
 import BlockContent from "@sanity/block-content-to-react";
@@ -63,15 +63,24 @@ export default function Home() {
                 background: `url(${post.imageHome.asset.url})`,
               }}
             >
-              <p>{post.title}</p>
+              <h2>{post.title}</h2>
               <BlockContent
                 blocks={post.description}
                 projectId={sanityClient.projectId}
                 dataset={sanityClient.dataset}
               />
-              <a href={post.link}>
-                <button>Twitter</button>
-              </a>
+
+              <div class="button">
+                <div id="dub-arrow">
+                  <img
+                    src="https://logos-world.net/wp-content/uploads/2020/04/Twitter-Logo.png"
+                    alt=""
+                  />
+                </div>
+                <a href={post.link}>Follow Me!</a>
+              </div>
+              {/* <button class="learn-more">Twitter</button> */}
+              {/* <a href={post.link}><button>Twitter</button></a> */}
 
               {/* <img src={post.imageTv.asset.url} alt="" />
             <img src={post.imageHome.asset.url} alt="" /> */}
