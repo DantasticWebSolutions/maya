@@ -41,7 +41,7 @@
 .navbar {
   height: 65px;
   width: 100vw;
-  background-color: #fff;
+  background-color: rgb(53, 132, 93);
   color: #000000 !important;
   position: fixed;
   top: 0;
@@ -252,7 +252,7 @@ a {
 .contact {
   display: flex;
   flex-direction: row-reverse;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   padding: 20px;
 }
@@ -266,6 +266,6 @@ a {
 .infoContainer {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 }

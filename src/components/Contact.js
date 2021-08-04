@@ -34,73 +34,75 @@ const Contact = () => {
 
   return (
     <>
-      <h3>Contact Me</h3>
-      <div className="contact">
-        <Form
-          onSubmit={handleOnSubmit}
-          name="contact-form"
-          method="POST"
-          action="/success/"
-          data-netlify="true"
-          netlify-honeypot="got-ya"
-        >
-          <Form.Field
-            id="form-input-control-last-name"
-            control={Input}
-            label="Name"
-            name="user_name"
-            placeholder="John Doe"
-            required
-            icon="user circle"
-            iconPosition="left"
-          />
-          <Form.Field
-            id="form-input-control-email"
-            control={Input}
-            label="Email"
-            name="user_email"
-            placeholder="mayarussellsmith@gmail.com"
-            required
-            icon="mail"
-            iconPosition="left"
-          />
+      <div>
+        <h3>Contact Me</h3>
+        <div className="contact">
+          <Form
+            onSubmit={handleOnSubmit}
+            name="contact-form"
+            method="POST"
+            action="/success/"
+            data-netlify="true"
+            netlify-honeypot="got-ya"
+          >
+            <Form.Field
+              id="form-input-control-last-name"
+              control={Input}
+              label="Name"
+              name="user_name"
+              placeholder="John Doe"
+              required
+              icon="user circle"
+              iconPosition="left"
+            />
+            <Form.Field
+              id="form-input-control-email"
+              control={Input}
+              label="Email"
+              name="user_email"
+              placeholder="mayarussellsmith@gmail.com"
+              required
+              icon="mail"
+              iconPosition="left"
+            />
 
-          <Form.Field
-            id="form-textarea-control-opinion"
-            control={TextArea}
-            label="Message"
-            name="user_message"
-            placeholder="Insert your message"
-            required
-          />
-          <Button type="submit" color="green">
-            Submit
-          </Button>
-        </Form>
+            <Form.Field
+              id="form-textarea-control-opinion"
+              control={TextArea}
+              label="Message"
+              name="user_message"
+              placeholder="Insert your message"
+              required
+            />
+            <Button type="submit" color="green">
+              Submit
+            </Button>
+          </Form>
 
-        <div className="infoContainer">
-          <a href="mailto:mayarussellsmith@gmail.com">
-            <p>mayarussellsmith@gmail.com</p>
-          </a>
-          <a href="tel:+447502381831">
-            <p>+44 07502381831</p>
-          </a>
-          <div className="icons">
-            <SocialIcon
-              url="https://www.facebook.com/"
-              fgColor="#fff"
-              className="socialIcon"
-            />
-            <SocialIcon
-              url="https://www.linkedin.com/"
-              fgColor="#fff"
-              className="socialIcon"
-            />
-            <SocialIcon
-              url="https://www.instagram.com/eatingwithelisa/"
-              fgColor="#fff"
-              className="socialIcon"
-            />
+          <div className="infoContainer">
+            <a href="mailto:mayarussellsmith@gmail.com">
+              <p>mayarussellsmith@gmail.com</p>
+            </a>
+            <a href="tel:+447502381831">
+              <p>+44 07502381831</p>
+            </a>
+            <div className="icons">
+              <SocialIcon
+                url="https://www.facebook.com/"
+                fgColor="#fff"
+                className="socialIcon"
+              />
+              <SocialIcon
+                url="https://www.linkedin.com/"
+                fgColor="#fff"
+                className="socialIcon"
+              />
+              <SocialIcon
+                url="https://www.instagram.com/eatingwithelisa/"
+                fgColor="#fff"
+                className="socialIcon"
+              />
+            </div>
           </div>
         </div>
       </div>

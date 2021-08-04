@@ -1,6 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Tv from "./components/Tv";
+import Radio from "./components/Radio";
+import Articles from "./components/Articles";
 import SinglePost from "./components/SinglePost";
 import Home from "./components/Home";
 import Navbar from "./components/Navbar";
@@ -16,6 +18,12 @@ function App() {
           <Switch>
             <Route path="/tv" exact>
               <Tv />
+            </Route>
+            <Route path="/radio" exact>
+              <Radio />
+            </Route>
+            <Route path="/articles" exact>
+              <Articles />
             </Route>
             <Route path="/:slug" exact>
               <SinglePost />
