@@ -3,6 +3,7 @@ import { Form, Input, TextArea, Button } from "semantic-ui-react";
 import emailjs from "emailjs-com";
 import Swal from "sweetalert2";
 import { SocialIcon } from "react-social-icons";
+import SocialIcons from "./SocialIcons";
 
 // import "semantic-ui-css/semantic.min.css";
 
@@ -96,29 +97,7 @@ const Contact = () => {
             <a href="tel:+447502381831">
               <p>+44 07502381831</p>
             </a>
-            <div className="icons">
-              <SocialIcon
-                url="https://www.instagram.com/mayamoz/"
-                fgColor="#fff"
-                className="socialIcon"
-              />
-              <SocialIcon
-                url="https://www.youtube.com/channel/UCLBWjv_UpYZeCahMpPHhypQ"
-                fgColor="#fff"
-                className="socialIcon"
-              />
-
-              <SocialIcon
-                url="https://www.facebook.com/maya.russellsmith/"
-                fgColor="#fff"
-                className="socialIcon"
-              />
-              <SocialIcon
-                url="https://twitter.com/mrussellsmith"
-                fgColor="#fff"
-                className="socialIcon"
-              />
-            </div>
+            <SocialIcons />
           </div>
         </div>
       </div>

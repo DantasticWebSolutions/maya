@@ -393,7 +393,7 @@ button.learn-more:active::before {
   /* border: 2px solid rgb(53, 132, 93); */
   border: 2px solid #fff;
   backdrop-filter: blur(10px);
-  margin: 20px;
+  margin: 20px 5px;
   color: rgb(53, 132, 93);
   text-transform: uppercase;
   text-decoration: none;
@@ -440,8 +440,11 @@ a {
   height: auto;
 }
 
-.button:hover {
+.button.blue:hover {
   border-color: #1da1f2;
+}
+.button.green:hover {
+  border-color: rgb(53, 132, 93) !important;
 }
 .button:hover #dub-arrow {
   left: 0;
@@ -458,4 +461,9 @@ a {
   #container {
     width: 50%;
   }
+}
+
+.flexRow {
+  display: flex;
+  flex-direction: row;
 }

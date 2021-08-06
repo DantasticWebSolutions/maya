@@ -69,15 +69,31 @@ export default function Home() {
                 projectId={sanityClient.projectId}
                 dataset={sanityClient.dataset}
               />
-
-              <div class="button">
-                <div id="dub-arrow">
-                  <img
-                    src="https://logos-world.net/wp-content/uploads/2020/04/Twitter-Logo.png"
-                    alt=""
-                  />
-                </div>
-                <a href={post.link}>Follow Me!</a>
+              <div className="flexRow">
+                <a href={post.link}>
+                  <div class="button blue">
+                    <div id="dub-arrow">
+                      <img
+                        src="https://logos-world.net/wp-content/uploads/2020/04/Twitter-Logo.png"
+                        alt=""
+                      />
+                    </div>
+                    {/* Follow Me */}
+                    <a href={post.link}>Follow Me</a>
+                  </div>
+                </a>
+                <a href="#contact">
+                  <div class="button green">
+                    <div id="dub-arrow">
+                      <img
+                        src="https://image.flaticon.com/icons/png/512/733/733443.png"
+                        alt=""
+                      />
+                    </div>
+                    {/* Follow Me */}
+                    <a href={post.link}>Contact</a>
+                  </div>
+                </a>
               </div>
               {/* <button class="learn-more">Twitter</button> */}
               {/* <a href={post.link}><button>Twitter</button></a> */}
