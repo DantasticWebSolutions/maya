@@ -126,7 +126,8 @@ a {
   cursor: pointer;
 }
 
-.button a {
+.button a,
+.button span {
   position: relative;
   left: 0;
   transition: all 0.35s ease-Out;
@@ -156,7 +157,8 @@ a {
   border-color: rgb(20, 49, 13);
 }
 
-.button.greenColor a {
+.button.greenColor a,
+.button.greenColor span {
   color: rgb(20, 49, 13);
 }
 .button.blue:hover {
@@ -170,7 +172,8 @@ a {
   left: 0;
 }
 
-.button:hover a {
+.button:hover a,
+.button:hover span {
   left: 150px;
 }
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { Form, Input, TextArea, Button } from "semantic-ui-react";
+import { Form, Input, TextArea } from "semantic-ui-react";
 import emailjs from "emailjs-com";
 import Swal from "sweetalert2";
 import SocialIcons from "./SocialIcons";
@@ -93,8 +93,7 @@ const Contact = () => {
                   alt="tv"
                 />
               </div>
-              {/* Follow Me */}
-              <a>Submit</a>
+              {/* Follow Me */}Submit
             </button>
 
             {/* <Button className="button" type="submit">

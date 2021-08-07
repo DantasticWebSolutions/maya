@@ -120,7 +120,7 @@ export default function Home() {
                           alt="tv"
                         />
                       </div>
-                      <a>Read More</a>
+                      <span>Read More</span>
                     </div>
                   </Link>
                 </div>
@@ -150,7 +150,7 @@ export default function Home() {
                           alt="radio"
                         />
                       </div>
-                      <a>Read More</a>
+                      <span>Read More</span>
                     </div>
                   </Link>
                 </div>
@@ -180,7 +180,7 @@ export default function Home() {
                           alt="articles"
                         />
                       </div>
-                      <a>Read More</a>
+                      <span>Read More</span>
                     </div>
                   </Link>
                 </div>
