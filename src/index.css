@@ -2,11 +2,22 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  outline: none;
+  outline: none !important;
 }
 *::before,
 *::after {
   box-sizing: border-box;
+}
+*:focus {
+  outline: none;
+}
+html {
+  scrollbar-width: none !important;
+  -ms-overflow-style: -ms-autohiding-scrollbar !important;
+}
+
+html::-webkit-scrollbar {
+  display: none !important;
 }
 
 body {
@@ -16,7 +27,13 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden !important;
 }
+
+/* input:focus,
+textarea:focus {
+  outline: none;
+} */
 
 Form {
   /* border: 1px solid lightgray; */
@@ -57,4 +74,111 @@ Form div {
   justify-content: center;
   /* align-items: center; */
   margin: 5px 0;
+}
+
+/* Button */
+
+.button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 200px;
+  /* border: 2px solid rgb(53, 132, 93); */
+  border: 2px solid #fff;
+  /* backdrop-filter: blur(10px); */
+  margin: 20px 5px;
+  color: rgb(53, 132, 93);
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 15px;
+  letter-spacing: 1.5px;
+  overflow: hidden;
+}
+.blur {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+@supports (
+  (-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px)) or
+    (-moz-backdrop-filter: blur(10px)) or (-o-backdrop-filter: blur(10px)) or
+    (-ms-backdrop-filter: blur(10px))
+) {
+  .blur {
+    -webkit-backdrop-filter: blur(10px);
+    -moz-backdrop-filter: blur(10px);
+    -ms-backdrop-filter: blur(10px);
+    -o-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background-color: transparent !important;
+  }
+}
+
+a {
+  /* color: rgb(53, 132, 93); */
+  color: #fff;
+  text-decoration: none;
+  /* letter-spacing: 1px; */
+}
+.button {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.button a {
+  position: relative;
+  left: 0;
+  transition: all 0.35s ease-Out;
+}
+
+#dub-arrow {
+  width: 100%;
+  height: 100%;
+  /* background: rgb(53, 132, 93); */
+  /* backdrop-filter: blur(10px); */
+  left: -200px;
+  position: absolute;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.35s ease-Out;
+  bottom: 0;
+}
+
+.button img {
+  width: 30px;
+  height: auto;
+}
+
+.button.greenColor {
+  border-color: rgb(20, 49, 13);
+}
+
+.button.greenColor a {
+  color: rgb(20, 49, 13);
+}
+.button.blue:hover {
+  border-color: #1da1f2;
+}
+.button.green:hover {
+  border-color: #000 !important;
+  background-color: rgb(53, 132, 93);
+}
+.button:hover #dub-arrow {
+  left: 0;
+}
+
+.button:hover a {
+  left: 150px;
+}
+
+@media screen and (min-width: 1000px) {
+  h1 {
+    font-size: 2.2em;
+  }
+  #container {
+    width: 50%;
+  }
 }

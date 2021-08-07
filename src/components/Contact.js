@@ -2,7 +2,6 @@ import React from "react";
 import { Form, Input, TextArea, Button } from "semantic-ui-react";
 import emailjs from "emailjs-com";
 import Swal from "sweetalert2";
-import { SocialIcon } from "react-social-icons";
 import SocialIcons from "./SocialIcons";
 
 // import "semantic-ui-css/semantic.min.css";
@@ -66,6 +65,7 @@ const Contact = () => {
               required
               icon="mail"
               iconPosition="left"
+              type="email"
             />
 
             <Form.Field
@@ -76,7 +76,7 @@ const Contact = () => {
               placeholder="Insert your message"
               required
             />
-            <button type="submit" className="button">
+            {/* <button type="submit" className="button">
               <div id="dub-arrow">
                 <img
                   src="https://github.com/atloomer/atloomer.github.io/blob/master/img/iconmonstr-arrow-48-240.png?raw=true"
@@ -84,7 +84,19 @@ const Contact = () => {
                 />
               </div>
               <a>Submit</a>
+            </button> */}
+
+            <button type="submit" class="button greenColor green">
+              <div id="dub-arrow">
+                <img
+                  src="https://image.flaticon.com/icons/png/512/5226/5226275.png"
+                  alt="tv"
+                />
+              </div>
+              {/* Follow Me */}
+              <a>Submit</a>
             </button>
+
             {/* <Button className="button" type="submit">
               Submit
             </Button> */}

@@ -6,16 +6,6 @@ const SocialIcons = () => {
     <div>
       <div className="icons">
         <SocialIcon
-          url="https://wa.me/447502381831?text=Hello%20Maya%20I%20don't%20know%20what%20you%20want%20to%20say"
-          fgColor="#fff"
-          className="socialIcon"
-        />
-        <SocialIcon
-          url="mailto:mayarussellsmith@gmail.com"
-          fgColor="#fff"
-          className="socialIcon"
-        />
-        <SocialIcon
           url="https://www.instagram.com/mayamoz/"
           fgColor="#fff"
           className="socialIcon"

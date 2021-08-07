@@ -11,13 +11,13 @@
   padding: 50px;
   /* Set a specific height */
   min-height: 500px;
-
   /* Create the parallax scrolling effect */
   background-attachment: fixed !important;
   background-position: center !important;
   background-repeat: no-repeat !important;
   background-size: cover !important;
-  /* filter: blur(1px); */
+  /* backdrop-filter: blur(20px); */
+  /* -webkit-backdrop-filter: blur(20px); */
 }
 
 .home p {
@@ -44,17 +44,99 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 50px;
+  /* padding: 50px; */
+  padding: 5vw 0;
 }
+
 .sector {
-  width: 100vw;
-  height: 100vh;
+  width: 90vw;
+  border: 3px solid #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5vw;
+  color: #14310d;
+}
+
+.textSector {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .imgSector {
-  height: 200px;
+  height: 60vh;
   width: 100%;
-  object-fit: cover;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+}
+
+@media screen and (max-width: 700px) {
+  .home {
+    background-attachment: scroll !important;
+  }
+}
+
+/* iPad */
+@media screen and (max-width: 1024px) and (max-height: 768px) {
+  .home {
+    background-attachment: scroll !important;
+  }
+}
+/* iPad Landscape */
+@media screen and (max-width: 768px) and (max-height: 1024px) {
+  .home {
+    background-attachment: scroll !important;
+  }
+}
+/* iPad Pro */
+@media screen and (max-width: 1366px) and (max-height: 1024px) {
+  .home {
+    background-attachment: scroll !important;
+  }
+}
+/* iPad Pro Landscape */
+@media screen and (max-width: 1024px) and (max-height: 1366px) {
+  .home {
+    background-attachment: scroll !important;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .sector {
+    flex-direction: row;
+    width: 95vw;
+    margin-bottom: 2.5vw;
+  }
+
+  .imgSector {
+    height: 80vh;
+    width: 50vw !important;
+  }
+  .textSector {
+    width: 60%;
+  }
+}
+
+.title {
+  font-size: 25px;
+  text-align: center;
+  margin: 20px 0;
+}
+.sector hr {
+  width: 40%;
+}
+.description {
+  /* height: 20vh; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 30px 10px 30px;
+  max-width: 700px;
 }
 
 .pageContainer {
@@ -211,7 +293,7 @@ a {
   transition: all 2s ease-in !important;
 }
 .menuContainer .menuPortfolios {
-  background-color: #000 !important;
+  /* background-color: #000 !important; */
   z-index: 5 !important;
   cursor: pointer;
   pointer-events: auto;
@@ -313,157 +395,15 @@ a {
   align-items: center;
 }
 
-/* ### 3D BUTTON ### */
-
-/* * {
-  box-sizing: border-box;
-}
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-button {
-  color: #fff !important;
-  position: relative;
-  display: inline-block;
-  cursor: pointer;
-  outline: none;
-  border: 0;
-  vertical-align: middle;
-  text-decoration: none;
-  font-size: inherit;
-  font-family: inherit;
-}
-button.learn-more {
-  font-weight: 600;
-  font-size: 15px;
-  color: #382b22;
-  text-transform: uppercase;
-  padding: 1.25em 2em;
-  background: #00a766;
-  border: 2px solid rgb(32, 78, 55);
-  border-radius: 0.75em;
-  transform-style: preserve-3d;
-  transition: transform 150ms cubic-bezier(0, 0, 0.58, 1),
-    background 150ms cubic-bezier(0, 0, 0.58, 1);
-}
-button.learn-more::before {
-  position: absolute;
-  content: "";
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: #35845d;
-  border-radius: inherit;
-
-  transform: translate3d(0, 0.75em, -1em);
-  transition: transform 150ms cubic-bezier(0, 0, 0.58, 1),
-    box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
-}
-button.learn-more:hover {
-  background: #01f899;
-  transform: translate(0, 0.25em);
-}
-button.learn-more:hover::before {
-
-  transform: translate3d(0, 0.5em, -1em);
-}
-button.learn-more:active {
-  background: #04ff9f;
-  transform: translate(0em, 0.75em);
-}
-button.learn-more:active::before {
-  box-shadow: 0 0 0 2px #00a766, 0 0 #35845d;
-  transform: translate3d(0, 0, -1em);
-} */
-
-/* Seventh Button */
-
-.button {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  height: 50px;
-  width: 200px;
-  /* border: 2px solid rgb(53, 132, 93); */
-  border: 2px solid #fff;
-  backdrop-filter: blur(10px);
-  margin: 20px 5px;
-  color: rgb(53, 132, 93);
-  text-transform: uppercase;
-  text-decoration: none;
-  font-size: 15px;
-  letter-spacing: 1.5px;
-  overflow: hidden;
-}
-
-a {
-  /* color: rgb(53, 132, 93); */
-  color: #fff;
-  text-decoration: none;
-  /* letter-spacing: 1px; */
-}
-.button {
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
-}
-
-.button a {
-  position: relative;
-  left: 0;
-  transition: all 0.35s ease-Out;
-}
-
-#dub-arrow {
-  width: 100%;
-  height: 100%;
-  /* background: rgb(53, 132, 93); */
-  backdrop-filter: blur(10px);
-  left: -200px;
-  position: absolute;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.35s ease-Out;
-  bottom: 0;
-}
-
-.button img {
-  width: 30px;
-  height: auto;
-}
-
-.button.blue:hover {
-  border-color: #1da1f2;
-}
-.button.green:hover {
-  border-color: rgb(53, 132, 93) !important;
-}
-.button:hover #dub-arrow {
-  left: 0;
-}
-
-.button:hover a {
-  left: 150px;
-}
-
-@media screen and (min-width: 1000px) {
-  h1 {
-    font-size: 2.2em;
-  }
-  #container {
-    width: 50%;
-  }
-}
-
 .flexRow {
   display: flex;
   flex-direction: row;
+}
+@media screen and (max-width: 500px) {
+  .flexRow {
+    flex-direction: column;
+  }
+  .flexRow .button {
+    margin: 5px 0;
+  }
 }

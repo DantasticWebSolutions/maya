@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <div class="footer">
       <Contact />
-      Powered by Dantastic.ch
+      Powered by whizzifly
     </div>
   );
 };
