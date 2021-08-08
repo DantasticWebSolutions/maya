@@ -36,7 +36,7 @@ const Contact = () => {
   return (
     <>
       <div>
-        <h3>Contact Me</h3>
+        {/* <h3>Contact Me</h3> */}
         <div className="contact">
           <Form
             onSubmit={handleOnSubmit}
@@ -51,7 +51,7 @@ const Contact = () => {
               control={Input}
               label="Name"
               name="user_name"
-              placeholder="John Doe"
+              placeholder="Harry Potter"
               required
               icon="user circle"
               iconPosition="left"
@@ -61,7 +61,7 @@ const Contact = () => {
               control={Input}
               label="Email"
               name="user_email"
-              placeholder="mayarussellsmith@gmail.com"
+              placeholder="harrypotter@hogwarts.com"
               required
               icon="mail"
               iconPosition="left"
@@ -73,7 +73,7 @@ const Contact = () => {
               control={TextArea}
               label="Message"
               name="user_message"
-              placeholder="Insert your message"
+              placeholder="Do you know anything about the chamber of secrets?"
               required
             />
             {/* <button type="submit" className="button">
@@ -86,14 +86,14 @@ const Contact = () => {
               <a>Submit</a>
             </button> */}
 
-            <button type="submit" class="button greenColor green">
+            <button type="submit" class="button formButton">
               <div id="dub-arrow">
                 <img
                   src="https://image.flaticon.com/icons/png/512/5226/5226275.png"
                   alt="tv"
                 />
               </div>
-              {/* Follow Me */}Submit
+              <span>Submit</span>
             </button>
 
             {/* <Button className="button" type="submit">
@@ -101,6 +101,13 @@ const Contact = () => {
             </Button> */}
           </Form>
 
+          {/* <div
+            className="formImg"
+            style={{
+              background:
+                "url(https://images.unsplash.com/photo-1523966211575-eb4a01e7dd51?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1253&q=80)",
+            }}
+          ></div> */}
           <div className="infoContainer">
             <a href="mailto:mayarussellsmith@gmail.com">
               <p>mayarussellsmith@gmail.com</p>

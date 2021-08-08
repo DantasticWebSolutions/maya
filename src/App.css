@@ -112,13 +112,16 @@
     width: 95vw;
     margin-bottom: 2.5vw;
   }
+  .sector.reverse {
+    flex-direction: row-reverse;
+  }
 
   .imgSector {
     height: 80vh;
     width: 50vw !important;
   }
   .textSector {
-    width: 60%;
+    width: 50vw;
   }
 }
 
@@ -190,11 +193,18 @@
 }
 
 .socialIcon {
-  height: 55;
-  width: 55;
+  height: 55px;
+  width: 55px;
   border: 2px solid #fff;
   border-radius: 50%;
   margin: 10px;
+}
+
+@media scree and (max-width: 500px) {
+  .socialIcon {
+    height: 40px;
+    width: 40px;
+  }
 }
 
 .line {
@@ -332,7 +342,6 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 50px;
 }
 
 .footer {
@@ -345,21 +354,81 @@ a {
 }
 
 /* ### TV ###  */
+/* .singlePortfolio{
 
-.progetto {
+} */
+
+.containerImg {
+}
+
+.singlePortfolio .imgSinglePortfolio {
   width: 100vw;
-  height: calc(100vh - 65px);
+  padding: 200px 0;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: cover !important;
+
+  /* filter: brightness(95%); */
 }
+
+.singlePortfolio .flex {
+  color: #fff;
+  max-width: 500px;
+  padding: 50px 20px;
+  backdrop-filter: blur(1.5px);
+}
+.singlePortfolio .flex p {
+  margin-top: 10px;
+  text-align: center;
+}
+.singlePortfolio hr {
+  width: 30%;
+  margin: 10px;
+}
+
+.progettiContainer {
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.progetto {
+  width: 100%;
+  height: 60vh;
+  display: flex;
+  flex-direction: column-reverse;
+  margin-top: 25px;
+  padding: 0px;
+  border: 3px solid #000;
+}
+
+@media screen and (min-width: 700px) {
+  .progetto {
+    flex-direction: row;
+  }
+}
+
 .progetto .text {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 0;
+}
+
+.progetto .text .description {
+  max-width: 500px;
 }
 
 .frame {
   width: 100%;
   height: 100%;
-  padding: 100px 0;
+  padding: 0;
 }
 
 .noselect {
@@ -370,40 +439,4 @@ a {
   -ms-user-select: none; /* Internet Explorer/Edge */
   user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome, Edge, Opera and Firefox */
-}
-
-/* ### CONTACT ###   */
-
-.contact {
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-}
-
-@media screen and (max-width: 800px) {
-  .contact {
-    flex-direction: column;
-  }
-}
-
-.infoContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.flexRow {
-  display: flex;
-  flex-direction: row;
-}
-@media screen and (max-width: 500px) {
-  .flexRow {
-    flex-direction: column;
-  }
-  .flexRow .button {
-    margin: 5px 0;
-  }
 }

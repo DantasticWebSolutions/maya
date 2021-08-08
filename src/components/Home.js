@@ -125,7 +125,7 @@ export default function Home() {
                   </Link>
                 </div>
               </div>
-              <div className="sector">
+              <div className="sector reverse">
                 <div
                   className="imgSector"
                   style={{
