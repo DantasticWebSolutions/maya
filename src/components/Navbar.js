@@ -43,7 +43,7 @@ const Navbar = () => {
       </div>
       <div className={`menuContainer ${toggle ? "open" : "close"}`}>
         <div className="menuSlide">
-          <div className="links">
+          <div className="links noselect">
             <Link onClick={showMenu} to={"/"}>
               <p>Home</p>
             </Link>
@@ -57,7 +57,7 @@ const Navbar = () => {
                 <p>&gt;</p>
               </div>
             </div>
-            <ul className={`${togglePortfolio ? "open" : "close"}`}>
+            <ul className={`noselect ${togglePortfolio ? "open" : "close"}`}>
               <li>
                 <Link onClick={showMenu} to={"/tv"}>
                   <p>Tv</p>

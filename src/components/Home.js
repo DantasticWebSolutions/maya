@@ -58,7 +58,7 @@ export default function Home() {
         allPostsData.map((post) => (
           <div>
             <div
-              className="home"
+              className="home parallax"
               style={{
                 background: `url(${post.imageHome.asset.url})`,
               }}

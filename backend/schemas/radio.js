@@ -1,6 +1,6 @@
 export default {
-  name: "tv",
-  title: "TV",
+  name: "radio",
+  title: "RADIO",
   type: "document",
   fields: [
     {

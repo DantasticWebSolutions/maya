@@ -73,6 +73,7 @@ body {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  margin-bottom: 60px;
 }
 
 .flexRow {
@@ -174,6 +175,23 @@ Form div {
     -ms-backdrop-filter: blur(10px);
     -o-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
+    background-color: transparent !important;
+  }
+}
+.brightness80 {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+@supports (
+  (-webkit-backdrop-filter: blur(15px)) or (backdrop-filter: blur(15px)) or
+    (-moz-backdrop-filter: blur(15px)) or (-o-backdrop-filter: blur(15px)) or
+    (-ms-backdrop-filter: blur(15px))
+) {
+  .blur {
+    -webkit-backdrop-filter: blur(15px);
+    -moz-backdrop-filter: blur(15px);
+    -ms-backdrop-filter: blur(15px);
+    -o-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
     background-color: transparent !important;
   }
 }

@@ -7,6 +7,7 @@ import schemaTypes from "all:part:@sanity/base/schema-type";
 // We import object and document schemas
 import blockContent from "./blockContent";
 import tv from "./tv";
+import radio from "./radio";
 import home from "./home";
 
 // Then we give our schema to the builder and provide the result to Sanity
@@ -18,8 +19,9 @@ export default createSchema({
   types: schemaTypes.concat([
     // The following are document types which will appear
     // in the studio.
-    tv,
     home,
+    tv,
+    radio,
     // post,
     // author,
     // category,
