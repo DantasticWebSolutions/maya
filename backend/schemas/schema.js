@@ -9,6 +9,7 @@ import blockContent from "./blockContent";
 import tv from "./tv";
 import radio from "./radio";
 import home from "./home";
+import articles from "./articles";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -22,6 +23,7 @@ export default createSchema({
     home,
     tv,
     radio,
+    articles,
     // post,
     // author,
     // category,
