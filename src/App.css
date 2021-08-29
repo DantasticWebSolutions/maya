@@ -306,6 +306,10 @@ a {
 .menuContainer .menuPortfolios a {
   transition: all 2s ease-in !important;
 }
+
+.menuContainer .menuPortfolios a {
+  transition: all 2s ease-in;
+}
 .menuContainer .menuPortfolios {
   /* background-color: #000 !important; */
   z-index: 5 !important;
