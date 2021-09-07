@@ -46,7 +46,7 @@ export default function Radio() {
         </div>
       </div>
       <div className="titolo">
-        <h2>My Projects</h2>
+        <h2>My Radio Projects</h2>
       </div>
       <div className="progettiContainer">
         {allPostsData &&
