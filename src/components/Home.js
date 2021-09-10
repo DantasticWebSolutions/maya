@@ -57,6 +57,7 @@ export default function Home() {
       {allPostsData &&
         allPostsData.map((post) => (
           <div>
+            {/* HOME PAGE */}
             <div
               className="home parallax"
               style={{
@@ -94,6 +95,7 @@ export default function Home() {
                 </a>
               </div>
             </div>
+            {/* TV PAGE */}
             <div className="sectors">
               <div className="sector">
                 <div
@@ -125,6 +127,7 @@ export default function Home() {
                   </Link>
                 </div>
               </div>
+              {/* RADIO PAGE */}
               <div className="sector reverse">
                 <div
                   className="imgSector"
@@ -155,6 +158,7 @@ export default function Home() {
                   </Link>
                 </div>
               </div>
+              {/* ARTICLES PAGE */}
               <div className="sector">
                 <div
                   className="imgSector"
