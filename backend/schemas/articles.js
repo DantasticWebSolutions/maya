@@ -28,6 +28,12 @@ export default {
       type: "string",
     },
     {
+      name: "imgVideo",
+      title: "Img or Video?",
+      type: "string",
+      description: "Write either: 'img' or 'video' ",
+    },
+    {
       name: "link",
       title: "Link",
       type: "string",

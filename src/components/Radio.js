@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 // import { Link } from "react-router-dom";
 import sanityClient from "../client.js";
 import "../index.css";
+import BlockContent from "@sanity/block-content-to-react";
 
 export default function Radio() {
   const [allPostsData, setAllPosts] = useState(null);
@@ -20,30 +21,50 @@ export default function Radio() {
       .catch(console.error);
   }, []);
 
+  const [radioData, setRadioData] = useState(null);
+
+  useEffect(() => {
+    sanityClient
+      .fetch(
+        `*[_type == "home"]{
+					  titleRadio,
+            descriptionRadio,
+            imageRadio{
+                asset->{
+                    _id,
+                    url
+                }
+            },
+					}`
+      )
+      .then((data) => setRadioData(data))
+      .catch(console.error);
+  }, []);
   return (
     <div className="singlePortfolio">
-      <div className="containerImg">
-        <div
-          className="imgSinglePortfolio parallax"
-          // style={{
-          //   background: `url(https://cdn.sanity.io/images/ypkrx7ew/production/71b6514b5b854aa74330c86e31d94cacd37dac32-768x1024.jpg)`,
-          // }}
-          style={{
-            background: `url(https://images.unsplash.com/photo-1556761175-129418cb2dfe?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDB8fHJhZGlvfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format)`,
-          }}
-        >
-          <div className="flex blur brightness80">
-            <h1 className="portfolioTitle">RADIO PORTFOLIO</h1>
-            <hr />
-            <p>
-              Here is a collection of my radio work. <br /> A combination of my
-              work for Warwick’s student radio station, RAW1251am, and City
-              News. <br />
-              <br />
-            </p>
-            <div className="logos"></div>
-          </div>
-        </div>
+      <div className="headerSinglePortfolio">
+        {radioData &&
+          radioData.map((post, index) => (
+            <div className="sector">
+              <div
+                className="imgSector"
+                style={{
+                  background: `url(${post.imageRadio.asset.url})`,
+                }}
+              ></div>
+              <div className="textSector">
+                <h2 className="title">{post.titleRadio} Portfolio</h2>
+                <hr />
+                <div className="description">
+                  <BlockContent
+                    blocks={post.descriptionRadio}
+                    projectId={sanityClient.projectId}
+                    dataset={sanityClient.dataset}
+                  />
+                </div>
+              </div>
+            </div>
+          ))}
       </div>
       <div className="titolo">
         <h2>My Radio Projects</h2>
