@@ -81,7 +81,8 @@ export default function Articles() {
                 <p>{post.description}</p>
               </div>
 
-              {/* ### ADD IMG OR FRAME BASED ON imgVideo value in database ### */}
+              {/* ### TO DO ### */}
+              {/* ### ADD IMG OR FRAME BASED ON imgVideo value in database  ### */}
               <iframe
                 // className="frame"
                 className={`frame ${post.imgVideo}`}
