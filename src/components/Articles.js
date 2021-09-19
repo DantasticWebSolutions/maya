@@ -81,17 +81,19 @@ export default function Articles() {
                 <p>{post.description}</p>
               </div>
 
-              {/* ### TO DO ASAP ### */}
-              {/* ### ADD IMG OR FRAME BASED ON imgVideo value in database  ### */}
-              <iframe
-                // className="frame"
-                className={`frame ${post.imgVideo}`}
-                src={post.link}
-                title={post.title}
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-              ></iframe>
+              {post.imgVideo === "video" ? (
+                <iframe
+                  // className="frame"
+                  className="frame video"
+                  src={post.link}
+                  title={post.title}
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+              ) : (
+                <img src={post.link} alt="image post" className="frame img" />
+              )}
             </div>
           ))}
       </div>

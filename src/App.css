@@ -472,8 +472,9 @@ a {
   min-height: 400px;
 }
 
-.frame.img img {
+.frame.img {
   object-fit: cover;
+  border: 2px solid green;
 }
 .frame.video {
   border: 2px solid red;
