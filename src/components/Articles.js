@@ -83,7 +83,6 @@ export default function Articles() {
 
               {post.imgVideo === "video" ? (
                 <iframe
-                  // className="frame"
                   className="frame video"
                   src={post.link}
                   title={post.title}
