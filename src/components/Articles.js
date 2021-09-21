@@ -81,6 +81,7 @@ export default function Articles() {
                 <p>{post.description}</p>
               </div>
 
+              {/* Add Photo or Video based on varible  */}
               {post.imgVideo === "video" ? (
                 <iframe
                   className="frame video"
