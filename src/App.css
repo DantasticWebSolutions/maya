@@ -472,6 +472,7 @@ a {
   min-height: 400px;
 }
 
+/* Fix media viewport */
 .frame.img {
   object-fit: cover;
   width: 100%;
