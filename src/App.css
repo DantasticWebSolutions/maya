@@ -474,15 +474,20 @@ a {
 
 .frame.img {
   object-fit: cover;
-  border: 2px solid green;
+  width: 100%;
 }
 .frame.video {
-  border: 2px solid red;
+  width: 100%;
 }
 
 @media screen and (max-width: 500px) {
   .frame {
-    min-height: 200px;
+    min-height: 300px;
+  }
+}
+@media screen and (min-width: 700px) {
+  .frame.img {
+    width: 50% !important;
   }
 }
 @media screen and (min-width: 900px) {
