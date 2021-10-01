@@ -91,7 +91,7 @@ export default function Articles() {
                   allowfullscreen
                 ></iframe>
               ) : (
-                <img src={post.link} alt="image post" className="frame img" />
+                <img src={post.link} alt="post" className="frame img" />
               )}
             </div>
           ))}
