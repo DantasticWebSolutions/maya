@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import { Link } from "react-router-dom";
-
+import { SocialIcon } from "react-social-icons";
 import SocialIcons from "./SocialIcons";
 import { useDetectOutsideClick } from "./useDetectOutsideClick";
 
@@ -26,13 +26,13 @@ const Navbar = () => {
   };
   return (
     <>
-      <div className="navbar">
+      <div className="navbar blur">
         {/* MENU */}
 
         {/* LOGO */}
         <Link to="/">
           <div onClick={() => setToggle(false)} className="logo">
-            Maya Russell-Smith: Broadcast Journalist
+            Maya Russell-Smith
           </div>
         </Link>
 
@@ -79,10 +79,24 @@ const Navbar = () => {
           {/* <Contact /> */}
           <div className="infoContainer">
             <a href="mailto:mayarussellsmith@gmail.com">
-              <p>mayarussellsmith@gmail.com</p>
+              <p>
+                <SocialIcon
+                  url="mailto:mayarussellsmith@gmail.com"
+                  fgColor="#fff"
+                  className="socialIcon"
+                />
+                mayarussellsmith@gmail.com
+              </p>
             </a>
             <a href="tel:+447502381831">
-              <p>+44 07502381831</p>
+              <p>
+                <SocialIcon
+                  url="tel:+447502381831"
+                  fgColor="#fff"
+                  className="socialIcon"
+                />
+                +44 07502381831
+              </p>
             </a>
             <SocialIcons />
           </div>

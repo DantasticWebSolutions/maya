@@ -55,6 +55,7 @@ const Contact = () => {
               required
               icon="user circle"
               iconPosition="left"
+              className="formField"
             />
             <Form.Field
               id="form-input-control-email"
@@ -66,6 +67,7 @@ const Contact = () => {
               icon="mail"
               iconPosition="left"
               type="email"
+              className="formField"
             />
 
             <Form.Field
@@ -75,6 +77,7 @@ const Contact = () => {
               name="user_message"
               placeholder="Do you know anything about the chamber of secrets?"
               required
+              className="formField"
             />
             {/* <button type="submit" className="button">
               <div id="dub-arrow">

@@ -152,6 +152,7 @@ Form div {
   width: 200px;
   /* border: 2px solid rgb(53, 132, 93); */
   border: 2px solid #fff;
+  border-radius: 5px;
   /* backdrop-filter: blur(10px); */
   margin: 20px 5px;
   color: rgb(53, 132, 93);
