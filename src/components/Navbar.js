@@ -30,6 +30,7 @@ const Navbar = () => {
         {/* MENU */}
 
         {/* LOGO */}
+        {/* CHAnge logo */}
 
         <Link to="/">
           <div onClick={() => setToggle(false)} className="logo">
