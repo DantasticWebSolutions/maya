@@ -26,7 +26,8 @@ const Navbar = () => {
   };
   return (
     <>
-      <div className="navbar blur">
+      <div className="navbar">
+        {/* <div className="navbar blur"> */}
         {/* MENU */}
 
         {/* LOGO */}

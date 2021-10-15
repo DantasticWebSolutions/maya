@@ -1,5 +1,6 @@
 :root {
-  --primary: #36a9e1;
+  --primary: rgb(45, 110, 29);
+  --primaryLight: rgb(61, 155, 37);
   --secondary: #ffffff;
   --black: #000;
   --text: #828282;
@@ -30,24 +31,6 @@
   right: 0;
   width: 100vw;
   min-height: 200px;
-}
-
-@media screen and (min-width: 800px) {
-  .home {
-    padding: 50px;
-  }
-  .homePage {
-    flex-direction: row-reverse;
-  }
-  .sagomaMaya img {
-    width: 50vw;
-    min-height: 300px;
-    top: 0 !important;
-  }
-  .home {
-    width: 50vw;
-    min-height: 700px;
-  }
 }
 
 .home h5 {
@@ -83,16 +66,17 @@
   padding: 10px 20px;
   text-align: center;
   /* background-color: var(--primary); */
-  color: #000;
+  color: var(--primary);
   font-size: 20px;
 }
 .home .button1 {
   border: none;
-  background-color: #36a9e1;
+  background-color: var(--primary);
   border: 2px solid transparents;
+  color: var(--secondary);
 }
 .home .button2 {
-  border: 2px solid var(--black);
+  border: 2px solid var(--primary);
 }
 .sectors {
   /* width: 100vw; */
@@ -127,7 +111,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: left;
+  align-items: center;
   padding: 0 30px;
 }
 
@@ -186,6 +170,7 @@
   }
   .textSector {
     width: 50vw;
+    align-items: left !important;
   }
 }
 
@@ -324,7 +309,7 @@
   padding: 5px 10px 0 20px !important;
   font-size: 25px;
   font-weight: 800;
-  color: #000;
+  color: var(--primary);
   font-family: var(
     --font-headings,
     "PT Sans",
@@ -581,4 +566,125 @@ a {
   -ms-user-select: none; /* Internet Explorer/Edge */
   user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome, Edge, Opera and Firefox */
+}
+
+/* MEDIA  */
+
+@media screen and (max-width: 1000px) {
+  .home h2 {
+    font-size: 40px;
+  }
+  .home p {
+    font-size: 15px;
+  }
+  .home h5 {
+    font-size: 15px;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .home {
+    padding: 50px;
+  }
+  .homePage {
+    flex-direction: row-reverse;
+  }
+  .sagomaMaya img {
+    width: 50vw;
+    min-height: 300px;
+    top: 0 !important;
+  }
+  .home {
+    width: 50vw;
+    /* min-height: 700px; */
+  }
+}
+
+.css-1h9z7r5-MuiButtonBase-root-MuiTab-root.Mui-selected {
+  color: var(--primary) !important;
+}
+
+.css-1aquho2-MuiTabs-indicator {
+  background-color: var(--primary) !important;
+}
+
+.css-1h9z7r5-MuiButtonBase-root-MuiTab-root {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  position: relative;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  background-color: transparent;
+  outline: 0;
+  border: 0;
+  margin: 0;
+  border-radius: 5px !important;
+}
+
+.css-ahj2mt-MuiTypography-root {
+  line-height: unset !important;
+}
+/* TIMELINE  */
+
+.timeline {
+  width: 100%;
+  height: 100%;
+}
+
+.element {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 10px;
+}
+
+.element .date {
+  height: 100% !important;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.element .date p {
+  text-align: center;
+}
+
+.element .date .ball {
+  width: 10px;
+  height: 10px;
+  border: #000 1px solid;
+  border-radius: 50%;
+  margin-left: 20px;
+  padding: 9px;
+  background-color: var(--primaryLight);
+}
+
+.element .description {
+  padding: 0;
+}
+
+.element .description .logo img {
+  width: 100px;
+  height: 100px;
+}
+
+.element .description .descriptionTxt {
+}
+
+.element .description .descriptionTxt h2 {
+  color: var(--primary);
+}
+
+.element .description .descriptionTxt p {
 }
