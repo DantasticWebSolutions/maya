@@ -4,11 +4,6 @@ export default {
   type: "document",
   fields: [
     {
-      name: "date",
-      title: "Date",
-      type: "string",
-    },
-    {
       name: "img",
       title: "Image Link",
       type: "string",
@@ -19,9 +14,29 @@ export default {
       type: "string",
     },
     {
+      name: "name",
+      title: "Company Name",
+      type: "string",
+    },
+    {
       name: "description",
       title: "Description",
       type: "string",
+    },
+    {
+      name: "releaseDate",
+      title: "Release date",
+      type: "date",
+      options: {
+        dateFormat: "YYYY-MM-DD",
+      },
+    },
+  ],
+  orderings: [
+    {
+      title: "Release Date, New",
+      name: "releaseDateDesc",
+      by: [{ field: "releaseDate", direction: "asc" }],
     },
   ],
 };

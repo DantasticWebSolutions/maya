@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 // import { Link } from "react-router-dom";
 import sanityClient from "../client.js";
 import "../index.css";
-import BlockContent from "@sanity/block-content-to-react";
 
 import TimeLine from "./TimeLine";
 
@@ -12,11 +11,13 @@ const Education = () => {
   useEffect(() => {
     sanityClient
       .fetch(
-        `*[_type == "radio"]{
-					title,
-          slug,
+        `*[_type == "education"] | order(releaseDate desc){
+					date,
+          img,
           description,
-          link
+          title,
+          name,
+          releaseDate
 					}`
       )
       .then((data) => setAllPosts(data))
@@ -25,30 +26,18 @@ const Education = () => {
 
   return (
     <div>
-      <TimeLine
-        date="Jan 2021"
-        img="https://1000logos.net/wp-content/uploads/2021/05/The-Sun-logo.png"
-        title="TITLE HERE"
-        description="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt dolorem deserunt non nostrum perspiciatis officia obcaecati voluptatem laboriosam, earum nobis."
-      />
-      <TimeLine
-        date="Jan 2021"
-        img="https://1000logos.net/wp-content/uploads/2021/05/The-Sun-logo.png"
-        title="TITLE HERE"
-        description="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt dolorem deserunt non nostrum perspiciatis officia obcaecati voluptatem laboriosam, earum nobis."
-      />
-      <TimeLine
-        date="Jan 2021"
-        img="https://1000logos.net/wp-content/uploads/2021/05/The-Sun-logo.png"
-        title="TITLE HERE"
-        description="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt dolorem deserunt non nostrum perspiciatis officia obcaecati voluptatem laboriosam, earum nobis."
-      />
-      <TimeLine
-        date="Jan 2021"
-        img="https://1000logos.net/wp-content/uploads/2021/05/The-Sun-logo.png"
-        title="TITLE HERE"
-        description="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt dolorem deserunt non nostrum perspiciatis officia obcaecati voluptatem laboriosam, earum nobis."
-      />
+      {allPostsData &&
+        allPostsData.map((post, index) => (
+          <TimeLine
+            date={post.date}
+            img={post.img}
+            name={post.name}
+            title={post.title}
+            description={post.description}
+            releaseMonth={post.releaseDate.slice(5, 7)}
+            releaseYear={post.releaseDate.slice(0, 4)}
+          />
+        ))}
     </div>
   );
 };
