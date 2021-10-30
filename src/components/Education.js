@@ -12,12 +12,12 @@ const Education = () => {
     sanityClient
       .fetch(
         `*[_type == "education"] | order(releaseDate desc){
-					date,
           img,
           description,
           title,
           name,
-          releaseDate
+          releaseDate,
+          finishDate
 					}`
       )
       .then((data) => setAllPosts(data))
@@ -34,8 +34,12 @@ const Education = () => {
             name={post.name}
             title={post.title}
             description={post.description}
+            releaseDay={post.releaseDate.slice(8, 10)}
             releaseMonth={post.releaseDate.slice(5, 7)}
             releaseYear={post.releaseDate.slice(0, 4)}
+            finishDay={post.finishDate.slice(8, 10)}
+            finishMonth={post.finishDate.slice(5, 7)}
+            finishYear={post.finishDate.slice(0, 4)}
           />
         ))}
     </div>

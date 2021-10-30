@@ -11,6 +11,7 @@ import radio from "./radio";
 import home from "./home";
 import articles from "./articles";
 import education from "./education";
+import workExperience from "./workExperience";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -26,6 +27,7 @@ export default createSchema({
     radio,
     articles,
     education,
+    workExperience,
     // post,
     // author,
     // category,

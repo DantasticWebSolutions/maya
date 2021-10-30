@@ -1,6 +1,6 @@
 export default {
-  name: "education",
-  title: "EDUCATION",
+  name: "workExperience",
+  title: "WORK EXPERIENCE",
   type: "document",
   fields: [
     {
@@ -10,12 +10,12 @@ export default {
     },
     {
       name: "title",
-      title: "Degree Title",
+      title: "Job Title",
       type: "string",
     },
     {
       name: "name",
-      title: "Istitution Name",
+      title: "Company Name",
       type: "string",
     },
     {

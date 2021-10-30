@@ -1,6 +1,5 @@
 import React, { useState, useRef } from "react";
 import { Link } from "react-router-dom";
-import { SocialIcon } from "react-social-icons";
 import SocialIcons from "./SocialIcons";
 import { useDetectOutsideClick } from "./useDetectOutsideClick";
 
@@ -26,8 +25,8 @@ const Navbar = () => {
   };
   return (
     <>
-      <div className="navbar">
-        {/* <div className="navbar blur"> */}
+      {/* <div className="navbar blur "> */}
+      <div className="navbar blackBlur">
         {/* MENU */}
 
         {/* LOGO */}
@@ -38,12 +37,27 @@ const Navbar = () => {
           </div>
         </Link>
 
+        <div className="navbarLinks">
+          <Link to="/radio">
+            <div className="navbarLink">Radio</div>
+          </Link>
+          <Link to="/articles">
+            <div className="navbarLink">Digital</div>
+          </Link>
+          <Link to="/tv">
+            <div className="navbarLink">Tv</div>
+          </Link>
+          <Link to="/tv">
+            <div className="button2 whiteColor marginLeft">Contact</div>
+          </Link>
+        </div>
+
         <div className="menu" onClick={showMenu}>
           <div className={`line line1 ${toggle ? "open" : "close"}`}></div>
           <div className={`line line2 ${toggle ? "open" : "close"}`}></div>
         </div>
       </div>
-      <div className={`menuContainer ${toggle ? "open" : "close"}`}>
+      <div className={`blackBlur menuContainer ${toggle ? "open" : "close"}`}>
         <div className="menuSlide">
           <div className="links noselect">
             <Link onClick={showMenu} to={"/"}>
@@ -61,18 +75,18 @@ const Navbar = () => {
             </div>
             <ul className={`noselect ${togglePortfolio ? "open" : "close"}`}>
               <li>
-                <Link onClick={showMenu} to={"/tv"}>
-                  <p>Tv</p>
-                </Link>
-              </li>
-              <li>
                 <Link onClick={showMenu} to={"/Radio"}>
                   <p>Radio</p>
                 </Link>
               </li>
               <li>
                 <Link onClick={showMenu} to={"/Articles"}>
-                  <p>Articles</p>
+                  <p>Digital</p>
+                </Link>
+              </li>
+              <li>
+                <Link onClick={showMenu} to={"/tv"}>
+                  <p>Tv</p>
                 </Link>
               </li>
             </ul>
@@ -80,7 +94,7 @@ const Navbar = () => {
 
           {/* <Contact /> */}
           <div className="infoContainer">
-            <a href="mailto:mayarussellsmith@gmail.com">
+            {/* <a href="mailto:mayarussellsmith@gmail.com">
               <p>
                 <SocialIcon
                   url="mailto:mayarussellsmith@gmail.com"
@@ -89,17 +103,7 @@ const Navbar = () => {
                 />
                 mayarussellsmith@gmail.com
               </p>
-            </a>
-            <a href="tel:+447502381831">
-              <p>
-                <SocialIcon
-                  url="tel:+447502381831"
-                  fgColor="#fff"
-                  className="socialIcon"
-                />
-                +44 07502381831
-              </p>
-            </a>
+            </a> */}
             <SocialIcons />
           </div>
         </div>

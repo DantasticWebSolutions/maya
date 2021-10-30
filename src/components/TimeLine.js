@@ -33,19 +33,25 @@ const TimeLine = (props) => {
               : "Err0re"}
 
             <br />
+
             {props.releaseYear}
           </p>
           <div className="ball"></div>
           <div className="line"></div>
         </div>
         <div className="description">
-          <div className="logo">
+          <div className="logo resp">
             <img src={props.img} alt="The Sun logo" />
           </div>
+
           <div className="descriptionTxt">
             <h2>{props.title}</h2>
             <h5>{props.name}</h5>
-            <p>{props.description}</p>
+            <h5>
+              {props.releaseDay}/{props.releaseMonth}/{props.releaseYear} -{" "}
+              {props.finishDay}/{props.finishMonth}/{props.finishYear}
+            </h5>
+            <p className="marginTop">{props.description}</p>
           </div>
         </div>
       </div>

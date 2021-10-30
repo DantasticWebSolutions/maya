@@ -48,7 +48,7 @@ export default function Post() {
           tvData.map((post, index) => (
             <div className="sector">
               <div
-                className="imgSector"
+                className="imgSector bubble"
                 style={{
                   background: `url(${post.imageTv.asset.url})`,
                 }}

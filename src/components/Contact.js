@@ -36,8 +36,8 @@ const Contact = () => {
   return (
     <>
       <div>
-        {/* <h3>Contact Me</h3> */}
         <div className="contact">
+          <h2>Contact Me</h2>
           <Form
             onSubmit={handleOnSubmit}
             name="contact-form"
@@ -79,15 +79,6 @@ const Contact = () => {
               required
               className="formField"
             />
-            {/* <button type="submit" className="button">
-              <div id="dub-arrow">
-                <img
-                  src="https://github.com/atloomer/atloomer.github.io/blob/master/img/iconmonstr-arrow-48-240.png?raw=true"
-                  alt=""
-                />
-              </div>
-              <a>Submit</a>
-            </button> */}
 
             <button type="submit" class="button formButton">
               <div id="dub-arrow">
@@ -98,26 +89,8 @@ const Contact = () => {
               </div>
               <span>Submit</span>
             </button>
-
-            {/* <Button className="button" type="submit">
-              Submit
-            </Button> */}
           </Form>
-
-          {/* <div
-            className="formImg"
-            style={{
-              background:
-                "url(https://images.unsplash.com/photo-1523966211575-eb4a01e7dd51?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1253&q=80)",
-            }}
-          ></div> */}
           <div className="infoContainer">
-            <a href="mailto:mayarussellsmith@gmail.com">
-              <p>mayarussellsmith@gmail.com</p>
-            </a>
-            <a href="tel:+447502381831">
-              <p>+44 07502381831</p>
-            </a>
             <SocialIcons />
           </div>
         </div>

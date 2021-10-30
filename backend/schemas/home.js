@@ -28,28 +28,6 @@ export default {
       options: {
         hotspot: true,
       },
-      // description: "TV",
-    },
-    {
-      name: "titleTv",
-      title: "[TV] Title",
-      type: "string",
-      // description: "TV",
-    },
-    {
-      name: "descriptionTv",
-      title: "[TV] Description",
-      type: "blockContent",
-      // description: "TV",
-    },
-    {
-      name: "imageTv",
-      title: "[TV] Image",
-      type: "image",
-      options: {
-        hotspot: true,
-      },
-      // description: "TV",
     },
     {
       name: "titleRadio",
@@ -92,6 +70,27 @@ export default {
         hotspot: true,
       },
       // description: "ARTICLES",
+    },
+    {
+      name: "titleTv",
+      title: "[TV] Title",
+      type: "string",
+      // description: "TV",
+    },
+    {
+      name: "descriptionTv",
+      title: "[TV] Description",
+      type: "blockContent",
+      // description: "TV",
+    },
+    {
+      name: "imageTv",
+      title: "[TV] Image",
+      type: "image",
+      options: {
+        hotspot: true,
+      },
+      // description: "TV",
     },
   ],
 };

@@ -42,7 +42,7 @@ export default function Home() {
                   background: `url(${post.imageHome.asset.url})`,
                 }}
               ></div> */}
-              <div className="sagomaMaya ">
+              <div className="sagomaMaya bubble ">
                 <img src={post.imageHome.asset.url} alt="" />
               </div>
 

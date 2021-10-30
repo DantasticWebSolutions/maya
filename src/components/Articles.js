@@ -48,7 +48,7 @@ export default function Articles() {
           radioData.map((post, index) => (
             <div className="sector">
               <div
-                className="imgSector"
+                className="imgSector bubble"
                 style={{
                   background: `url(${post.imageArticles.asset.url})`,
                 }}
