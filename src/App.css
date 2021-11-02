@@ -151,7 +151,7 @@
   align-content: center;
   align-items: center;
   justify-content: center;
-  width: 80vw;
+  /* width: 80vw; */
   min-height: 200px;
   margin: auto;
   background-color: var(--primary);
@@ -159,8 +159,15 @@
   box-shadow: 15px 15px 50px rgba(0, 0, 0, 0.2),
     inset 15px 15px 50px rgba(0, 0, 0, 1);
   animation: morphing 15s infinite;
-  /* overflow: hidden; */
+  overflow: hidden;
 }
+
+@media (max-width: 800px) {
+  .bubble {
+    width: 80%;
+  }
+}
+
 .bubble:hover {
   animation-play-state: reverse;
 }
@@ -524,7 +531,7 @@
   -webkit-font-smoothing: antialiased;
   letter-spacing: normal;
   line-height: 1;
-  text-shadow: 1px 1px #acacac;
+  /* text-shadow: 1px 1px #acacac; */
 }
 
 .logoIcon {
