@@ -73,9 +73,7 @@ export default function Post() {
       <div className="progettiContainer">
         {allPostsData &&
           allPostsData.map((post, index) => (
-            <div
-              className={`progetto ${index % 2 === 0 ? "normal" : "reverse"}`}
-            >
+            <div className={`progetto ${index % 2 === 0 ? "" : "reverse"}`}>
               <div className="text">
                 <h2>{post.title}</h2>
                 <p>{post.description}</p>

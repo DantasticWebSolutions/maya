@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import SocialIcons from "./SocialIcons";
 import { useDetectOutsideClick } from "./useDetectOutsideClick";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMicrophone } from "@fortawesome/free-solid-svg-icons";
+
 const Navbar = () => {
   const dropdownRef = useRef(null);
   const [toggle, setToggle] = useDetectOutsideClick(dropdownRef, false);
@@ -26,14 +29,21 @@ const Navbar = () => {
   return (
     <>
       {/* <div className="navbar blur "> */}
-      <div className="navbar blackBlur">
+      <div className={`navbar ${toggle ? "blur" : "blackBlur"}`}>
+        {/* <div className="navbar blackBlur"> */}
         {/* MENU */}
 
         {/* LOGO */}
         {/* CHAnge logo */}
         <Link to="/">
-          <div onClick={() => setToggle(false)} className="logo">
-            Maya Russell-Smith
+          <div onClick={() => setToggle(false)} className="logoContainer">
+            <div className="logoIcon">
+              <FontAwesomeIcon icon={faMicrophone} />
+            </div>
+            <div className="logoText">
+              <span>Maya Russell-Smith</span>
+              <span className="smallText">Broadcast Journalist</span>
+            </div>
           </div>
         </Link>
 
@@ -57,7 +67,7 @@ const Navbar = () => {
           <div className={`line line2 ${toggle ? "open" : "close"}`}></div>
         </div>
       </div>
-      <div className={`blackBlur menuContainer ${toggle ? "open" : "close"}`}>
+      <div className={`blur menuContainer ${toggle ? "open" : "close"}`}>
         <div className="menuSlide">
           <div className="links noselect">
             <Link onClick={showMenu} to={"/"}>

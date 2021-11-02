@@ -51,7 +51,7 @@ const TimeLine = (props) => {
               {props.releaseDay}/{props.releaseMonth}/{props.releaseYear} -{" "}
               {props.finishDay}/{props.finishMonth}/{props.finishYear}
             </h5>
-            <p className="marginTop">{props.description}</p>
+            {props.description}
           </div>
         </div>
       </div>
