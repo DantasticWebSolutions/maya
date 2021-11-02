@@ -815,37 +815,17 @@ a {
   background-color: var(--primary) !important;
 }
 
-.css-1h9z7r5-MuiButtonBase-root-MuiTab-root {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  position: relative;
-  box-sizing: border-box;
-  -webkit-tap-highlight-color: transparent;
-  background-color: transparent;
-  outline: 0;
-  border: 0;
-  margin: 0;
-  border-radius: 5px !important;
-}
-
 .css-ahj2mt-MuiTypography-root {
   /* line-height: unset !important; */
 
   line-height: 1.2 !important;
 }
 
-.css-1h9z7r5-MuiButtonBase-root-MuiTab-root {
-  text-transform: capitalize !important;
+.appBar {
+  border-radius: 5px !important;
+  -webkit-flex-shrink: 1 !important;
+  -ms-flex-negative: 1 !important;
+  flex-shrink: 1 !important;
 }
 
 /* AppBar text  */

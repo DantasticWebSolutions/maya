@@ -58,9 +58,9 @@ export default function TabSelection() {
           aria-label="basic tabs example"
           centered
         >
-          <Tab label="Portfolio" {...a11yProps(0)} />
-          <Tab label="Work Experience" {...a11yProps(1)} />
-          <Tab label="Education" {...a11yProps(2)} />
+          <Tab className="appBar" label="Portfolio" {...a11yProps(0)} />
+          <Tab className="appBar" label="Work Experience" {...a11yProps(1)} />
+          <Tab className="appBar" label="Education" {...a11yProps(2)} />
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
