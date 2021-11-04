@@ -42,7 +42,7 @@ export default function Home() {
                   background: `url(${post.imageHome.asset.url})`,
                 }}
               ></div> */}
-              <div className="sagomaMaya bubble ">
+              <div className="sagomaMaya bubble">
                 <img src={post.imageHome.asset.url} alt="" />
               </div>
 
@@ -61,10 +61,10 @@ export default function Home() {
                   and editing content for TV.
                 </p>
                 <div className="buttonContainer">
-                  <a href={post.link} className="button1">
+                  <a href="#contact" className="button1">
                     Contact
                   </a>
-                  <a href="#contact" className="button2">
+                  <a href={post.link} className="button2">
                     LinkedIn
                   </a>
                 </div>

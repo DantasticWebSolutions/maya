@@ -71,10 +71,14 @@ const Navbar = () => {
         <div className="menuSlide">
           <div className="links noselect">
             <Link onClick={showMenu} to={"/"}>
-              <p>Home</p>
+              <p>About Me</p>
             </Link>
+            <Link onClick={showMenu} to={"/blog"}>
+              <p>Blog</p>
+            </Link>
+
             <div className="menuPortfolios" onClick={showPortfolio}>
-              <p className="noselect">PORTFOLIOS</p>
+              <p className="noselect">PORTFOLIO</p>
               <div
                 className={`arrowMenu noselect ${
                   togglePortfolio ? "open" : "close"
