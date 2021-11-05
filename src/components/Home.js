@@ -64,7 +64,12 @@ export default function Home() {
                   <a href="#contact" className="button1">
                     Contact
                   </a>
-                  <a href={post.link} className="button2">
+                  <a
+                    href={post.link}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="button2"
+                  >
                     LinkedIn
                   </a>
                 </div>
