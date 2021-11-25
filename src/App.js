@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Tv from "./components/Tv";
 import Radio from "./components/Radio";
 import Articles from "./components/Articles";
-import SinglePost from "./components/SinglePost";
+import SinglePost from "./components/Blog/SinglePost.js";
 import Home from "./components/Home";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";

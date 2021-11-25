@@ -80,13 +80,7 @@ const Contact = () => {
               className="formField"
             />
 
-            <button type="submit" class="button formButton">
-              <div id="dub-arrow">
-                <img
-                  src="https://image.flaticon.com/icons/png/512/5226/5226275.png"
-                  alt="tv"
-                />
-              </div>
+            <button type="submit" class="button ">
               <span>Submit</span>
             </button>
           </Form>

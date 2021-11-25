@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 //SANITY
 import sanityClient from "../client.js";
 import TabSelection from "./TabSelection";
+import Post from "./Blog/Post";
 
 export default function Home() {
   const [allPostsData, setAllPosts] = useState(null);
@@ -76,6 +77,7 @@ export default function Home() {
               </div>
             </div>
             <TabSelection />
+            <Post />
           </div>
         ))}
     </div>

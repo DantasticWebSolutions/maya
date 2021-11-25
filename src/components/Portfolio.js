@@ -78,12 +78,6 @@ export default function Portfolio() {
                   </div>
                   <Link to="/tv">
                     <div class="button greenColor green">
-                      <div id="dub-arrow">
-                        <img
-                          src="https://image.flaticon.com/icons/png/512/5226/5226275.png"
-                          alt="tv"
-                        />
-                      </div>
                       <span>Read More</span>
                     </div>
                   </Link>
@@ -109,12 +103,6 @@ export default function Portfolio() {
                   </div>
                   <Link to="/radio">
                     <div class="button greenColor green">
-                      <div id="dub-arrow">
-                        <img
-                          src="https://image.flaticon.com/icons/png/512/2958/2958571.png"
-                          alt="radio"
-                        />
-                      </div>
                       <span>Read More</span>
                     </div>
                   </Link>
@@ -140,12 +128,6 @@ export default function Portfolio() {
                   </div>
                   <Link to="/articles">
                     <div class="button greenColor green">
-                      <div id="dub-arrow">
-                        <img
-                          src="https://image.flaticon.com/icons/png/512/2910/2910776.png"
-                          alt="articles"
-                        />
-                      </div>
                       <span>Read More</span>
                     </div>
                   </Link>

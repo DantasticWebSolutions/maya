@@ -4,9 +4,12 @@ export default {
   type: "document",
   fields: [
     {
-      name: "img",
-      title: "Image Link",
-      type: "string",
+      name: "imageHome",
+      title: "Image",
+      type: "image",
+      options: {
+        hotspot: true,
+      },
     },
     {
       name: "title",

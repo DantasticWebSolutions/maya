@@ -12,7 +12,12 @@ const WorkExperience = () => {
     sanityClient
       .fetch(
         `*[_type == "workExperience"] | order(releaseDate desc){
-          img,
+          imageHome{
+            asset->{
+                _id,
+                url
+            }
+          },
           description,
           title,
           name,
@@ -30,7 +35,7 @@ const WorkExperience = () => {
         allPostsData.map((post, index) => (
           <TimeLine
             date={post.date}
-            img={post.img}
+            img={post.imageHome.asset.url}
             name={post.name}
             title={post.title}
             description={post.description}

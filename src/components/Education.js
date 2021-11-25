@@ -12,7 +12,12 @@ const Education = () => {
     sanityClient
       .fetch(
         `*[_type == "education"] | order(releaseDate desc){
-          img,
+          imageHome{
+            asset->{
+                _id,
+                url
+            }
+          },
           description,
           title,
           name,
@@ -30,7 +35,7 @@ const Education = () => {
         allPostsData.map((post, index) => (
           <TimeLine
             date={post.date}
-            img={post.img}
+            img={post.imageHome.asset.url}
             name={post.name}
             title={post.title}
             description={post.description}
