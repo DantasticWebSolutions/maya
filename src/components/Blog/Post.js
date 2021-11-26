@@ -10,7 +10,7 @@ export default function Post() {
   useEffect(() => {
     sanityClient
       .fetch(
-        `*[_type == "post"]{
+        `*[_type == "post"] | order(publishedAt desc){
 					title,
 					slug,
 					mainImage{
@@ -30,10 +30,6 @@ export default function Post() {
 
   return (
     <div>
-      <div className="flex">
-        <h2>Blog</h2>
-        {/* <h3>Welcome to my blog posts page!</h3> */}
-      </div>
       <section className="blogContenitor">
         {allPostsData &&
           allPostsData.map((post, index) => (

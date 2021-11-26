@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import sanityClient from "../client.js";
+import sanityClient from "../../client.js";
 import BlockContent from "@sanity/block-content-to-react";
 import { Link } from "react-router-dom";
 import SwiperCore, {
@@ -10,10 +10,8 @@ import SwiperCore, {
   Autoplay,
   A11y,
 } from "swiper";
-import { Swiper, SwiperSlide } from "swiper/react";
-
+import { Swiper, SwiperSlide } from "swiper/react/swiper-react.js";
 import "swiper/swiper-bundle.min.css";
-import "../index.css";
 SwiperCore.use([Navigation, Pagination, A11y, Controller, Thumbs, Autoplay]);
 const SlideShow = () => {
   //SANITY.IO data
@@ -30,9 +28,7 @@ const SlideShow = () => {
 					  url
 					 }
 				   },
-				 time,
 				 description,
-				 difficulty
 			 }[0...3]`
       )
       .then((data) => setAllPosts(data))
@@ -70,23 +66,9 @@ const SlideShow = () => {
                     dataset={sanityClient.dataset}
                   />
                 </p>
-                <div className="extraDescription">
-                  Cook: &nbsp;
-                  <BlockContent
-                    blocks={post.time}
-                    projectId={sanityClient.projectId}
-                    dataset={sanityClient.dataset}
-                  />
-                  &nbsp; &#8226; &nbsp;
-                  <BlockContent
-                    blocks={post.difficulty}
-                    projectId={sanityClient.projectId}
-                    dataset={sanityClient.dataset}
-                  />
-                </div>
 
                 <Link to={"/" + post.slug.current} key={post.slug.current}>
-                  <button>View Recipe</button>
+                  <div className="button1">View Recipe</div>
                 </Link>
               </div>
             </SwiperSlide>

@@ -49,9 +49,15 @@ const TimeLine = (props) => {
             <h5>{props.name}</h5>
             <h5>
               {props.releaseDay}/{props.releaseMonth}/{props.releaseYear} -{" "}
-              {props.finishDay}/{props.finishMonth}/{props.finishYear}
+              {props.finishYear === "1999" ? (
+                <span>Present</span>
+              ) : (
+                <span>
+                  {props.finishDay}/{props.finishMonth}/{props.finishYear}
+                </span>
+              )}
             </h5>
-            {props.description}
+            <p>{props.description}</p>
           </div>
         </div>
       </div>

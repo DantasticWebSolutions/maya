@@ -3,7 +3,9 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Tv from "./components/Tv";
 import Radio from "./components/Radio";
 import Articles from "./components/Articles";
-import SinglePost from "./components/Blog/SinglePost.js";
+import SinglePost from "./components/Blog/SinglePost";
+import SlideShow from "./components/Blog/SlideShow";
+import Post from "./components/Blog/Post";
 import Home from "./components/Home";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -38,6 +40,10 @@ function App() {
               </Route>
               <Route path="/articles" exact>
                 <Articles />
+              </Route>
+              <Route path="/blog" exact>
+                <SlideShow />
+                <Post />
               </Route>
               <Route path="/:slug" exact>
                 <SinglePost />

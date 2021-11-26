@@ -54,6 +54,13 @@ export default {
       type: "blockContent",
     },
   ],
+  orderings: [
+    {
+      title: "Published At",
+      name: "publishedAtDesc",
+      by: [{ field: "publishedAt", direction: "desc" }],
+    },
+  ],
 
   preview: {
     select: {

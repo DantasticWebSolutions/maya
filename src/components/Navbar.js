@@ -57,8 +57,8 @@ const Navbar = () => {
           <Link to="/tv">
             <div className="navbarLink">Tv</div>
           </Link>
-          <Link to="/tv">
-            <div className="button2 whiteColor marginLeft">Contact</div>
+          <Link to="/blog">
+            <div className="button2 whiteColor marginLeft">Blog</div>
           </Link>
         </div>
 

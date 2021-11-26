@@ -82,6 +82,8 @@ export default function OnePost() {
         {/* <img src={urlFor(postData.authorImage).width(100).url()} alt="" /> */}
         <h4>{postData.name}</h4>
       </div>
+
+      {/* MORE POST LIKE THIS */}
     </div>
   );
 }
