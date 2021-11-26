@@ -21,7 +21,7 @@ export default function Post() {
 					   },
 					 time,
 					 description,
-					 difficulty
+           publishedAt
 					}`
       )
       .then((data) => setAllPosts(data))
@@ -42,6 +42,7 @@ export default function Post() {
                 <img src={post.mainImage.asset.url} alt="" />
               </div>
               <div className="text">
+                <h5>{post.publishedAt}</h5>
                 <h2>{post.title}</h2>
                 <div className="extraDescription">
                   <BlockContent
