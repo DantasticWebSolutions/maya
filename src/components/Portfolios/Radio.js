@@ -1,20 +1,19 @@
 import React, { useEffect, useState } from "react";
 // import { Link } from "react-router-dom";
-import sanityClient from "../client.js";
-import "../index.css";
+import sanityClient from "../../client.js";
+import "../../index.css";
 import BlockContent from "@sanity/block-content-to-react";
 
-export default function Articles() {
+export default function Radio() {
   const [allPostsData, setAllPosts] = useState(null);
 
   useEffect(() => {
     sanityClient
       .fetch(
-        `*[_type == "articles"]{
+        `*[_type == "radio"]{
 					title,
           slug,
           description,
-          imgVideo,
           link
 					}`
       )
@@ -28,9 +27,9 @@ export default function Articles() {
     sanityClient
       .fetch(
         `*[_type == "home"]{
-          titleArticles,
-          descriptionArticles,
-            imageArticles{
+					  titleRadio,
+            descriptionRadio,
+            imageRadio{
                 asset->{
                     _id,
                     url
@@ -46,19 +45,19 @@ export default function Articles() {
       <div className="headerSinglePortfolio">
         {radioData &&
           radioData.map((post, index) => (
-            <div className="sector">
+            <div key={post.title} className="sector">
               <div
                 className="imgSector bubble"
                 style={{
-                  background: `url(${post.imageArticles.asset.url})`,
+                  background: `url(${post.imageRadio.asset.url})`,
                 }}
               ></div>
               <div className="textSector">
-                <h2 className="title">{post.titleArticles} Portfolio</h2>
+                <h2 className="title">{post.titleRadio} Portfolio</h2>
                 <hr />
                 <div className="description">
                   <BlockContent
-                    blocks={post.descriptionArticles}
+                    blocks={post.descriptionRadio}
                     projectId={sanityClient.projectId}
                     dataset={sanityClient.dataset}
                   />
@@ -68,7 +67,7 @@ export default function Articles() {
           ))}
       </div>
       <div className="titolo">
-        <h2>My Digital Platform Projects</h2>
+        <h2>My Radio Projects</h2>
       </div>
       <div className="progettiContainer">
         {allPostsData &&
@@ -80,22 +79,19 @@ export default function Articles() {
                 <h2>{post.title}</h2>
                 <p>{post.description}</p>
               </div>
-              {/* Add Photo or Video based on varible imgVideo */}
-              {post.imgVideo === "video" ? (
-                <iframe
-                  className="frame video"
-                  src={post.link}
-                  title={post.title}
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen
-                ></iframe>
-              ) : (
-                <img src={post.link} alt="post" className="frame img" />
-              )}
+
+              <iframe
+                className="frame"
+                src={post.link}
+                title={post.title}
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
             </div>
           ))}
       </div>
+      <p>REad Tv and Articles</p>
     </div>
   );
 }

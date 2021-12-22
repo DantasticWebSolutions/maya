@@ -2,7 +2,8 @@ import React from "react";
 import { Form, Input, TextArea } from "semantic-ui-react";
 import emailjs from "emailjs-com";
 import Swal from "sweetalert2";
-import SocialIcons from "./SocialIcons";
+import SocialIcons from "./Util/SocialIcons";
+import Button from "@mui/material/Button";
 
 // import "semantic-ui-css/semantic.min.css";
 
@@ -77,12 +78,13 @@ const Contact = () => {
               name="user_message"
               placeholder="Do you know anything about the chamber of secrets?"
               required
+              type="textArea"
               className="formField"
             />
 
-            <button type="submit" class="button ">
-              <span>Submit</span>
-            </button>
+            <Button type="submit" className="button" variant="contained">
+              Send an Owl
+            </Button>
           </Form>
           <div className="infoContainer">
             <SocialIcons />

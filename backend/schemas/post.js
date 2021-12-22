@@ -38,9 +38,12 @@ export default {
       of: [{ type: "reference", to: { type: "category" } }],
     },
     {
-      name: "publishedAt",
-      title: "Published at",
-      type: "datetime",
+      name: "releaseDate",
+      title: "Release Date",
+      type: "date",
+      options: {
+        dateFormat: "YYYY-MM-DD",
+      },
     },
 
     {
@@ -56,9 +59,9 @@ export default {
   ],
   orderings: [
     {
-      title: "Published At",
-      name: "publishedAtDesc",
-      by: [{ field: "publishedAt", direction: "desc" }],
+      title: "releaseDate",
+      name: "releaseDateDesc",
+      by: [{ field: "releaseDate", direction: "desc" }],
     },
   ],
 

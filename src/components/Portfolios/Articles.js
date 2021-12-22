@@ -1,19 +1,20 @@
 import React, { useEffect, useState } from "react";
 // import { Link } from "react-router-dom";
-import sanityClient from "../client.js";
-import "../index.css";
+import sanityClient from "../../client.js";
+import "../../index.css";
 import BlockContent from "@sanity/block-content-to-react";
 
-export default function Post() {
+export default function Articles() {
   const [allPostsData, setAllPosts] = useState(null);
 
   useEffect(() => {
     sanityClient
       .fetch(
-        `*[_type == "tv"]{
+        `*[_type == "articles"]{
 					title,
           slug,
           description,
+          imgVideo,
           link
 					}`
       )
@@ -21,15 +22,15 @@ export default function Post() {
       .catch(console.error);
   }, []);
 
-  const [tvData, setTvData] = useState(null);
+  const [radioData, setRadioData] = useState(null);
 
   useEffect(() => {
     sanityClient
       .fetch(
         `*[_type == "home"]{
-					  titleTv,
-            descriptionTv,
-            imageTv{
+          titleArticles,
+          descriptionArticles,
+            imageArticles{
                 asset->{
                     _id,
                     url
@@ -37,28 +38,27 @@ export default function Post() {
             },
 					}`
       )
-      .then((data) => setTvData(data))
+      .then((data) => setRadioData(data))
       .catch(console.error);
   }, []);
-
   return (
     <div className="singlePortfolio">
       <div className="headerSinglePortfolio">
-        {tvData &&
-          tvData.map((post, index) => (
+        {radioData &&
+          radioData.map((post, index) => (
             <div className="sector">
               <div
                 className="imgSector bubble"
                 style={{
-                  background: `url(${post.imageTv.asset.url})`,
+                  background: `url(${post.imageArticles.asset.url})`,
                 }}
               ></div>
               <div className="textSector">
-                <h2 className="title">{post.titleTv} Portfolio</h2>
+                <h2 className="title">{post.titleArticles} Portfolio</h2>
                 <hr />
                 <div className="description">
                   <BlockContent
-                    blocks={post.descriptionTv}
+                    blocks={post.descriptionArticles}
                     projectId={sanityClient.projectId}
                     dataset={sanityClient.dataset}
                   />
@@ -68,25 +68,31 @@ export default function Post() {
           ))}
       </div>
       <div className="titolo">
-        <h2>My TV Projects</h2>
+        <h2>My Digital Platform Projects</h2>
       </div>
       <div className="progettiContainer">
         {allPostsData &&
           allPostsData.map((post, index) => (
-            <div className={`progetto ${index % 2 === 0 ? "" : "reverse"}`}>
+            <div
+              className={`progetto ${index % 2 === 0 ? "normal" : "reverse"}`}
+            >
               <div className="text">
                 <h2>{post.title}</h2>
                 <p>{post.description}</p>
               </div>
-
-              <iframe
-                className="frame"
-                src={post.link}
-                title={post.title}
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-              ></iframe>
+              {/* Add Photo or Video based on varible imgVideo */}
+              {post.imgVideo === "video" ? (
+                <iframe
+                  className="frame video"
+                  src={post.link}
+                  title={post.title}
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              ) : (
+                <img src={post.link} alt="post" className="frame img" />
+              )}
             </div>
           ))}
       </div>

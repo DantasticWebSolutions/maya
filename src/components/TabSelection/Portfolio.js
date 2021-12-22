@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 //SANITY
-import sanityClient from "../client.js";
+import sanityClient from "../../client.js";
 import BlockContent from "@sanity/block-content-to-react";
+import Button from "@mui/material/Button";
 
 export default function Portfolio() {
   const [allPostsData, setAllPosts] = useState(null);
@@ -53,10 +54,10 @@ export default function Portfolio() {
   }, []);
 
   return (
-    <div>
+    <div className="portfolios">
       {allPostsData &&
         allPostsData.map((post) => (
-          <div>
+          <div key={post.title}>
             {/* TV PAGE */}
             <div className="sectors">
               <div className="sector">
@@ -77,9 +78,9 @@ export default function Portfolio() {
                     />
                   </div>
                   <Link to="/tv">
-                    <div class="button greenColor green">
-                      <span>Read More</span>
-                    </div>
+                    <Button className="button" variant="outlined">
+                      Read More
+                    </Button>
                   </Link>
                 </div>
               </div>
@@ -102,9 +103,9 @@ export default function Portfolio() {
                     />
                   </div>
                   <Link to="/radio">
-                    <div class="button greenColor green">
-                      <span>Read More</span>
-                    </div>
+                    <Button className="button" variant="outlined">
+                      Read More
+                    </Button>
                   </Link>
                 </div>
               </div>
@@ -127,9 +128,9 @@ export default function Portfolio() {
                     />
                   </div>
                   <Link to="/articles">
-                    <div class="button greenColor green">
-                      <span>Read More</span>
-                    </div>
+                    <Button className="button" variant="outlined">
+                      Read More
+                    </Button>
                   </Link>
                 </div>
               </div>

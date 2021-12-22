@@ -1,10 +1,12 @@
 :root {
   --primary: rgb(45, 110, 29);
-  --primaryLight: rgb(61, 155, 37);
+  --primaryLight: rgb(45, 110, 29, 0.6);
+  /* --primaryLight: rgb(61, 155, 37); */
   --primaryDarker: rgb(34, 82, 22);
   --secondary: #ffffff;
   --black: #000;
   --text: #828282;
+
   --background: #f8f9fa;
   --backgroundDarker: #ececec;
   --blur: 5px;
@@ -46,7 +48,7 @@ a {
   background-color: unset;
 }
 a:hover {
-  color: unset !important;
+  color: unset;
 }
 
 body {
@@ -62,13 +64,13 @@ body {
 /* ### CONTACT ###   */
 
 .contact {
-  max-width: 100vw;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  margin-top: 20px;
+  /* margin-top: 20px; */
 }
 
 @media screen and (max-width: 800px) {
@@ -117,8 +119,7 @@ body {
 }
 
 Form {
-  /* border: 1px solid lightgray; */
-  width: 90vw;
+  width: 100%;
   max-width: 500px;
 
   padding: 20px;
@@ -126,7 +127,6 @@ Form {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* background-color: #000; */
 }
 
 /* @media screen and (max-width: 500px) {
@@ -135,21 +135,20 @@ Form {
   }
 } */
 
-/* Form textarea {
+Form textarea {
   background-color: transparent;
   margin-top: 5px;
   height: 100px;
   font-size: 20px;
   padding: 5px;
-} */
+}
 
 Form input,
 Form textarea {
-  /* height: 25px; */
   font-size: 20px;
-  padding: 10px;
+  padding: 5px 10px;
   border: none;
-  border: #000 2px solid;
+  /* border: #000 2px solid; */
   border-radius: 5px;
   background-color: var(--background);
 }
@@ -161,14 +160,12 @@ Form input::placeholder {
   font-size: 20px;
 }
 Form div {
-  /* border: 1px solid #000; */
-
   width: 100%;
   display: flex;
   flex-direction: column;
   text-align: left;
   justify-content: center;
-  /* align-items: center; */
+
   margin: 5px 0;
 }
 
@@ -179,7 +176,7 @@ Form label {
 /* Button */
 
 .button {
-  display: flex;
+  /* display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
@@ -187,15 +184,16 @@ Form label {
   width: 200px;
   border: 2px solid var(--black);
   border-radius: 5px;
-  /* backdrop-filter: blur(10px); */
   margin: 20px 5px;
   color: var(--black);
   text-transform: uppercase;
   text-decoration: none;
   font-size: 15px;
   letter-spacing: 1.5px;
-  overflow: hidden;
+  overflow: hidden; */
+  margin: 20px 0 !important;
 }
+
 .blur {
   background-color: rgba(255, 255, 255, 0.5) !important;
 }
@@ -298,24 +296,26 @@ a {
 
 .home {
   width: 80vw;
-  margin-top: 65px;
+  /* margin-top: 65px; */
   display: flex;
   color: black;
   flex-direction: column;
-  /* justify-content: center; */
+  justify-content: center;
   /* align-items: center; */
   padding: 20px;
   justify-items: center !important;
 }
 @media (max-width: 650px) {
   .home {
-    width: 95vw;
+    width: 90vw;
+    /* margin-left: 5vw; */
   }
 }
 
 .homePage {
   display: flex;
   flex-direction: column;
+  padding: 20px;
 }
 
 .sagomaMaya img {
@@ -337,18 +337,22 @@ a {
   padding: 5px 10px;
   text-align: left;
   font-family: "Playfair Display";
-  font-size: 64px;
+  font-size: 52px;
 }
 .home p {
   padding: 5px 10px;
   text-align: justify;
   color: #828282;
-  font-size: 20px;
 }
 
 .buttonContainer {
   display: flex;
   flex-direction: row;
+  /* margin: 20px 0; */
+  padding-left: 10px;
+}
+.buttonContainer > * {
+  margin-right: 10px;
 }
 
 .button1,
@@ -366,16 +370,16 @@ a {
 .button1 {
   border: none;
   background-color: var(--primary);
-  border: 2px solid transparents;
-  color: var(--secondary);
+  border: 2px solid transparent;
+  color: var(--secondary) !important;
 }
 .button2 {
   border: 2px solid var(--primary);
 }
 
 .whiteColor {
-  color: var(--secondary);
-  border-color: var(--secondary);
+  color: var(--secondary) !important;
+  border-color: var(--secondary) !important;
 }
 
 .marginLeft {
@@ -383,6 +387,9 @@ a {
 }
 .marginTop {
   margin-top: 5px !important;
+}
+.marginBottom {
+  margin-bottom: 20px !important;
 }
 .sectors {
   /* width: 100vw; */
@@ -418,7 +425,7 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 0 30px;
+  padding: 20px 30px;
 }
 
 .imgSector {
@@ -433,7 +440,7 @@ a {
   margin-top: 65px;
 }
 
-/* COPIED NMOW */
+/* BUBBLE */
 
 .bubble {
   display: flex;
@@ -449,7 +456,7 @@ a {
     inset 15px 15px 50px rgba(0, 0, 0, 1);
   animation: morphing 15s infinite;
   overflow: hidden;
-  margin: 20px 0;
+  /* margin: 20px 0; */
 }
 
 @media (max-width: 800px) {
@@ -606,7 +613,7 @@ a {
 
   .imgSector {
     height: 80vh;
-    width: 50vw !important;
+    width: 50vw;
   }
   .textSector {
     width: 50vw;
@@ -614,13 +621,36 @@ a {
   }
 }
 
+@media (min-width: 1450px) {
+  .portfolios .sectors {
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+  .portfolios .sectors > * {
+    flex: 0 0 30%;
+  }
+  .portfolios .sector {
+    width: unset;
+    display: block;
+    margin: 20px;
+  }
+  .portfolios .imgSector {
+    width: 100%;
+    height: 50vh;
+  }
+
+  .portfolios .textSector {
+    width: unset;
+    min-height: 545px;
+  }
+}
+
 .title {
   font-size: 25px;
   text-align: center;
-  margin: 20px 0;
+  /* margin: 20px 0; */
   padding: 5px 10px;
-  text-align: left;
-  font-family: "Playfair Display";
+  /* font-family: "Playfair Display"; */
   color: var(--black);
 }
 .sector hr {
@@ -687,7 +717,7 @@ a {
   margin: 0 10px;
   font-family: "Helvetica", "Gill Sans", "Gill Sans MT", "Calibri",
     "Trebuchet MS" !important;
-  color: var(--secondary);
+  color: var(--secondary) !important;
 }
 
 @media (max-width: 700px) {
@@ -999,6 +1029,7 @@ a {
   display: flex;
   flex-direction: column;
   margin-bottom: 25px;
+  flex-wrap: wrap;
 }
 
 .progetto {
@@ -1007,19 +1038,38 @@ a {
   flex-direction: column-reverse;
   margin-top: 25px;
   padding: 0px !important;
-  border: 3px solid;
+  border: 3px var(--black) solid;
   border-radius: 5px;
 }
 
-@media screen and (min-width: 700px) {
-  .progetto {
+@media screen and (min-width: 840px) {
+  .progettiContainer > * {
+    flex: 0 0 45%;
+    margin: 20px;
+  }
+
+  .progettiContainer {
     flex-direction: row;
+    justify-content: center;
+  }
+  .progetto {
+    flex-direction: column-reverse;
   }
   .progetto.reverse {
-    flex-direction: row-reverse;
+    flex-direction: column-reverse;
+  }
+
+  .frame {
+    /* max-height: 430px; */
+    top: 0;
   }
 }
-
+@media screen and (min-width: 1250px) {
+  .progettiContainer > * {
+    flex: 0 0 30%;
+    margin: 20px;
+  }
+}
 .progetto .text {
   width: 100%;
   display: flex;
@@ -1049,6 +1099,12 @@ a {
   min-height: 400px;
 }
 
+.frameSlideShow {
+  width: 50vw;
+
+  min-height: 400px;
+}
+
 .frame.img {
   object-fit: cover;
   width: 100%;
@@ -1067,11 +1123,11 @@ a {
     width: 50% !important;
   }
 }
-@media screen and (min-width: 900px) {
+/* @media screen and (min-width: 900px) {
   .frame {
     min-height: 700px;
   }
-}
+} */
 
 .noselect {
   -webkit-touch-callout: none; /* iOS Safari */
@@ -1118,15 +1174,15 @@ a {
   color: var(--primary) !important;
 }
 
-.css-1aquho2-MuiTabs-indicator {
+.css-15x8kew-MuiTabs-indicator {
   background-color: var(--primary) !important;
 }
 
-.css-ahj2mt-MuiTypography-root {
-  /* line-height: unset !important; */
+/* .css-ahj2mt-MuiTypography-root {
+  line-height: unset !important;
 
   line-height: 1.2 !important;
-}
+} */
 
 .appBar {
   border-radius: 5px !important;
@@ -1136,7 +1192,7 @@ a {
 }
 
 /* AppBar text  */
-.css-1h9z7r5-MuiButtonBase-root-MuiTab-root.Mui-selected {
+.css-cjctlb-MuiButtonBase-root-MuiTab-root.Mui-selected {
   color: var(--primary) !important;
 }
 
@@ -1221,11 +1277,18 @@ textarea:-ms-input-placeholder {
   padding: 0;
 }
 
-.element .description .logo img {
+.content img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 5px;
+  margin-bottom: 10px;
+}
+.content h5 {
+  text-transform: uppercase;
+}
+.content h3 {
+  margin-top: 10px !important;
 }
 
 @media (max-width: 800px) {
@@ -1255,10 +1318,6 @@ textarea:-ms-input-placeholder {
   }
 }
 
-.element .description .descriptionTxt {
-  min-width: 500px;
-}
-
 @media (max-width: 700px) {
   .element .description .descriptionTxt {
     min-width: 210px !important;
@@ -1282,3 +1341,14 @@ textarea:-ms-input-placeholder {
 
 /* .element .description .descriptionTxt p {
 } */
+
+.swal2-styled.swal2-confirm {
+  background-color: var(--primary) !important;
+}
+.swal2-popup {
+  padding: 50px !important;
+}
+
+.alignEnd {
+  align-self: flex-end;
+}

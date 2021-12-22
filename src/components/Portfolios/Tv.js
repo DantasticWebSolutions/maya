@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react";
 // import { Link } from "react-router-dom";
-import sanityClient from "../client.js";
-import "../index.css";
+import sanityClient from "../../client.js";
+import "../../index.css";
 import BlockContent from "@sanity/block-content-to-react";
 
-export default function Radio() {
+export default function Post() {
   const [allPostsData, setAllPosts] = useState(null);
 
   useEffect(() => {
     sanityClient
       .fetch(
-        `*[_type == "radio"]{
+        `*[_type == "tv"]{
 					title,
           slug,
           description,
@@ -21,15 +21,15 @@ export default function Radio() {
       .catch(console.error);
   }, []);
 
-  const [radioData, setRadioData] = useState(null);
+  const [tvData, setTvData] = useState(null);
 
   useEffect(() => {
     sanityClient
       .fetch(
         `*[_type == "home"]{
-					  titleRadio,
-            descriptionRadio,
-            imageRadio{
+					  titleTv,
+            descriptionTv,
+            imageTv{
                 asset->{
                     _id,
                     url
@@ -37,27 +37,28 @@ export default function Radio() {
             },
 					}`
       )
-      .then((data) => setRadioData(data))
+      .then((data) => setTvData(data))
       .catch(console.error);
   }, []);
+
   return (
     <div className="singlePortfolio">
       <div className="headerSinglePortfolio">
-        {radioData &&
-          radioData.map((post, index) => (
+        {tvData &&
+          tvData.map((post, index) => (
             <div className="sector">
               <div
                 className="imgSector bubble"
                 style={{
-                  background: `url(${post.imageRadio.asset.url})`,
+                  background: `url(${post.imageTv.asset.url})`,
                 }}
               ></div>
               <div className="textSector">
-                <h2 className="title">{post.titleRadio} Portfolio</h2>
+                <h2 className="title">{post.titleTv} Portfolio</h2>
                 <hr />
                 <div className="description">
                   <BlockContent
-                    blocks={post.descriptionRadio}
+                    blocks={post.descriptionTv}
                     projectId={sanityClient.projectId}
                     dataset={sanityClient.dataset}
                   />
@@ -67,14 +68,12 @@ export default function Radio() {
           ))}
       </div>
       <div className="titolo">
-        <h2>My Radio Projects</h2>
+        <h2>My TV Projects</h2>
       </div>
       <div className="progettiContainer">
         {allPostsData &&
           allPostsData.map((post, index) => (
-            <div
-              className={`progetto ${index % 2 === 0 ? "normal" : "reverse"}`}
-            >
+            <div className={`progetto ${index % 2 === 0 ? "" : "reverse"}`}>
               <div className="text">
                 <h2>{post.title}</h2>
                 <p>{post.description}</p>
@@ -84,9 +83,9 @@ export default function Radio() {
                 className="frame"
                 src={post.link}
                 title={post.title}
-                frameborder="0"
+                frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
+                allowFullScreen
               ></iframe>
             </div>
           ))}

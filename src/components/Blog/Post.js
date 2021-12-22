@@ -1,27 +1,27 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import sanityClient from "../../client";
 import "../../index.css";
-import BlockContent from "@sanity/block-content-to-react";
+import PostSection from "./PostSection";
 
-export default function Post() {
+const Post = () => {
   const [allPostsData, setAllPosts] = useState(null);
 
   useEffect(() => {
     sanityClient
       .fetch(
-        `*[_type == "post"] | order(publishedAt desc){
+        `*[_type == "post"] | order(releaseDate desc){
 					title,
 					slug,
 					mainImage{
 						asset->{
 						  _id,
 						  url
-						 }
-					   },
-					 time,
-					 description,
-           publishedAt
+            }
+          },
+					time,
+					description,
+          releaseDate,
+          "catTitle": categories[]->title,
 					}`
       )
       .then((data) => setAllPosts(data))
@@ -32,45 +32,23 @@ export default function Post() {
     <div>
       <section className="blogContenitor">
         {allPostsData &&
-          allPostsData.map((post, index) => (
-            <Link
-              className="post"
-              to={"/" + post.slug.current}
-              key={post.slug.current}
-            >
-              <div className="imgContainer">
-                <img src={post.mainImage.asset.url} alt="" />
-              </div>
-              <div className="text">
-                <h5>{post.publishedAt}</h5>
-                <h2>{post.title}</h2>
-                <div className="extraDescription">
-                  <BlockContent
-                    blocks={post.description}
-                    projectId={sanityClient.projectId}
-                    dataset={sanityClient.dataset}
-                  />
-                </div>
-
-                <Link
-                  to={"/" + post.slug.current}
-                  whileHover={{
-                    scale: 1.2,
-                    backgroundColor: "black",
-                    color: "white",
-                  }}
-                  // whileFocus={{
-                  // 	scale: 0.8
-                  // }}
-                >
-                  <div className="button">
-                    <span>Read More</span>
-                  </div>
-                </Link>
-              </div>
-            </Link>
+          allPostsData.map((post) => (
+            <PostSection
+              key={post.title}
+              slug={post.slug.current}
+              mainImage={post.mainImage.asset.url}
+              releaseDate={post.releaseDate}
+              // releaseDay={post.releaseDate.slice(8, 10)}
+              // releaseMonth={post.releaseDate.slice(5, 7)}
+              // releaseYear={post.releaseDate.slice(0, 4)}
+              title={post.title}
+              description={post.description}
+              catTitle={post.catTitle}
+            />
           ))}
       </section>
     </div>
   );
-}
+};
+
+export default Post;

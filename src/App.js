@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Tv from "./components/Tv";
-import Radio from "./components/Radio";
-import Articles from "./components/Articles";
+import Tv from "./components/Portfolios/Tv";
+import Radio from "./components/Portfolios/Radio";
+import Articles from "./components/Portfolios/Articles";
 import SinglePost from "./components/Blog/SinglePost";
 import SlideShow from "./components/Blog/SlideShow";
 import Post from "./components/Blog/Post";
@@ -21,7 +21,7 @@ function App() {
       },
       secondary: {
         // This is green.A700 as hex.
-        main: "#11cb5f",
+        main: "rgb(45, 110, 29, 0.6)",
       },
     },
   });

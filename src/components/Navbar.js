@@ -1,10 +1,11 @@
 import React, { useState, useRef } from "react";
 import { Link } from "react-router-dom";
-import SocialIcons from "./SocialIcons";
-import { useDetectOutsideClick } from "./useDetectOutsideClick";
+import SocialIcons from "./Util/SocialIcons";
+import { useDetectOutsideClick } from "./Util/useDetectOutsideClick";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMicrophone } from "@fortawesome/free-solid-svg-icons";
+import Button from "@mui/material/Button";
 
 const Navbar = () => {
   const dropdownRef = useRef(null);
@@ -34,9 +35,14 @@ const Navbar = () => {
         {/* MENU */}
 
         {/* LOGO */}
-        {/* CHAnge logo */}
         <Link to="/">
-          <div onClick={() => setToggle(false)} className="logoContainer">
+          <div
+            onClick={() => {
+              setToggle(false);
+              document.body.style.overflow = "scroll";
+            }}
+            className="logoContainer"
+          >
             <div className="logoIcon">
               <FontAwesomeIcon icon={faMicrophone} />
             </div>
@@ -49,16 +55,27 @@ const Navbar = () => {
 
         <div className="navbarLinks">
           <Link to="/radio">
-            <div className="navbarLink">Radio</div>
-          </Link>
-          <Link to="/articles">
-            <div className="navbarLink">Digital</div>
+            <Button className="navbarLink" variant="text">
+              Radio
+            </Button>
+            {/* <div className="navbarLink">Radio</div> */}
           </Link>
           <Link to="/tv">
-            <div className="navbarLink">Tv</div>
+            <Button className="navbarLink" variant="text">
+              TV
+            </Button>
           </Link>
+          <Link to="/articles">
+            <Button className="navbarLink" variant="text">
+              Digital
+            </Button>
+          </Link>
+
           <Link to="/blog">
-            <div className="button2 whiteColor marginLeft">Blog</div>
+            <Button className="whiteColor marginLeft" variant="outlined">
+              BLOG
+            </Button>
+            {/* <div className="button2 whiteColor marginLeft">Blog</div> */}
           </Link>
         </div>
 
