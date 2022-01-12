@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 //SANITY
 import sanityClient from "../../client.js";
 import BlockContent from "@sanity/block-content-to-react";
-import Button from "@mui/material/Button";
+// import Button from "@mui/material/Button";
+import ButtonMui from "../Util/ButtonMui";
 
 export default function Portfolio() {
   const [allPostsData, setAllPosts] = useState(null);
@@ -78,9 +79,12 @@ export default function Portfolio() {
                     />
                   </div>
                   <Link to="/tv">
-                    <Button className="button" variant="outlined">
-                      Read More
-                    </Button>
+                    <ButtonMui
+                      css="button"
+                      variant="outlined"
+                      text="Read More"
+                      target=""
+                    />
                   </Link>
                 </div>
               </div>
@@ -103,9 +107,12 @@ export default function Portfolio() {
                     />
                   </div>
                   <Link to="/radio">
-                    <Button className="button" variant="outlined">
-                      Read More
-                    </Button>
+                    <ButtonMui
+                      css="button"
+                      variant="outlined"
+                      text="Read More"
+                      target=""
+                    />
                   </Link>
                 </div>
               </div>
@@ -128,9 +135,12 @@ export default function Portfolio() {
                     />
                   </div>
                   <Link to="/articles">
-                    <Button className="button" variant="outlined">
-                      Read More
-                    </Button>
+                    <ButtonMui
+                      css="button"
+                      variant="outlined"
+                      text="Read More"
+                      target=""
+                    />
                   </Link>
                 </div>
               </div>

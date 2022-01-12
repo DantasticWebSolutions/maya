@@ -4,6 +4,8 @@ import sanityClient from "../../client.js";
 import "../../index.css";
 import BlockContent from "@sanity/block-content-to-react";
 
+import { Tween, Reveal } from "react-gsap";
+
 export default function Radio() {
   const [allPostsData, setAllPosts] = useState(null);
 
@@ -40,6 +42,7 @@ export default function Radio() {
       .then((data) => setRadioData(data))
       .catch(console.error);
   }, []);
+
   return (
     <div className="singlePortfolio">
       <div className="headerSinglePortfolio">
@@ -66,32 +69,46 @@ export default function Radio() {
             </div>
           ))}
       </div>
-      <div className="titolo">
-        <h2>My Radio Projects</h2>
-      </div>
+      <Reveal>
+        <Tween from={{ opacity: 0 }} delay={2} duration={2}>
+          <div className="titolo">
+            <h2>My Radio Projects</h2>
+          </div>
+        </Tween>
+      </Reveal>
       <div className="progettiContainer">
         {allPostsData &&
           allPostsData.map((post, index) => (
             <div
               className={`progetto ${index % 2 === 0 ? "normal" : "reverse"}`}
             >
-              <div className="text">
-                <h2>{post.title}</h2>
-                <p>{post.description}</p>
-              </div>
+              <Reveal>
+                <Tween from={{ opacity: 0 }} duration={2}>
+                  <div className="text">
+                    <h2>{post.title}</h2>
+                    <p>{post.description}</p>
+                  </div>
+                </Tween>
 
-              <iframe
-                className="frame"
-                src={post.link}
-                title={post.title}
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
+                <Tween from={{ opacity: 0 }} duration={2}>
+                  <iframe
+                    className="frame"
+                    src={post.link}
+                    title={post.title}
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  ></iframe>
+                </Tween>
+              </Reveal>
             </div>
           ))}
       </div>
-      <p>REad Tv and Articles</p>
+      <Reveal>
+        <Tween from={{ opacity: 0 }} delay={2} duration={2}>
+          <p>REad Tv and Articles</p>
+        </Tween>
+      </Reveal>
     </div>
   );
 }

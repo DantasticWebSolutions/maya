@@ -76,7 +76,12 @@ const LastRadio = () => {
                 <p>{post.description}</p>
 
                 <Link to={"/" + post.slug.current} key={post.slug.current}>
-                  <div className="button1">Read More</div>
+                  <ButtonMui
+                    css="button1"
+                    variant="contained"
+                    text="Read More"
+                    target=""
+                  />
                 </Link>
               </div>
             </SwiperSlide>

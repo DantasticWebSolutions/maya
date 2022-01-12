@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import { Link } from "react-router-dom";
-import SocialIcons from "./Util/SocialIcons";
+
 import { useDetectOutsideClick } from "./Util/useDetectOutsideClick";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -121,21 +121,6 @@ const Navbar = () => {
                 </Link>
               </li>
             </ul>
-          </div>
-
-          {/* <Contact /> */}
-          <div className="infoContainer">
-            {/* <a href="mailto:mayarussellsmith@gmail.com">
-              <p>
-                <SocialIcon
-                  url="mailto:mayarussellsmith@gmail.com"
-                  fgColor="#fff"
-                  className="socialIcon"
-                />
-                mayarussellsmith@gmail.com
-              </p>
-            </a> */}
-            <SocialIcons />
           </div>
         </div>
       </div>

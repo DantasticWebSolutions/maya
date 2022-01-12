@@ -30,6 +30,7 @@ const SlideShow = () => {
 					 }
 				   },
 				 description,
+         "catTitle": categories[]->title,
 			 }[0...3]`
       )
       .then((data) => setAllPosts(data))
@@ -59,7 +60,7 @@ const SlideShow = () => {
                 <img src={post.mainImage.asset.url} alt={post.title} />
               </div>
               <div className="slideShowDescription">
-                {/* <h5>{post.categories}</h5> */}
+                <h5>{post.catTitle}</h5>
                 <h2>{post.title}</h2>
 
                 <BlockContent

@@ -1,16 +1,21 @@
 import React, { useEffect, useState } from "react";
+import TabSelectionMobile from "./TabSelection/TabSelectionMobile";
+import SlideShow from "./Blog/SlideShow";
+import ButtonMui from "./Util/ButtonMui";
 //SANITY
 import sanityClient from "../client.js";
-import TabSelectionMobile from "./TabSelection/TabSelectionMobile";
-
-// import Post from "./Blog/Post"
-import SlideShow from "./Blog/SlideShow";
-import Button from "@mui/material/Button";
-// import Stack from "@mui/material/Stack";
+// GSAP
+import { Tween, Timeline } from "react-gsap";
+//Lazy Loading
+// const TabSelectionMobile = React.lazy(() => {
+//   return new Promise((resolve) => setTimeout(resolve, 1 * 2000)).then(() =>
+//     import("./TabSelection/TabSelectionMobile")
+//   );
+// });
 
 export default function Home() {
+  //SANITY DATAs
   const [allPostsData, setAllPosts] = useState(null);
-
   useEffect(() => {
     sanityClient
       .fetch(
@@ -40,40 +45,56 @@ export default function Home() {
           <div key={post.title}>
             {/* HOME PAGE */}
             <div className="homePage">
-              <div className="sagomaMaya bubble">
-                <img src={post.imageHome.asset.url} alt="" />
-              </div>
+              <Timeline
+              // target={
+              //   <div
+              //     style={{
+              //       width: "100px",
+              //       height: "100px",
+              //       background: "#ccc",
+              //     }}
+              //   />
+              // }
+              >
+                <Tween from={{ x: "+100%", opacity: 0 }} duration={2}>
+                  <div
+                    className="imgSector bubble"
+                    style={{
+                      background: `url(${post.imageHome.asset.url})`,
+                    }}
+                  >
+                    {/* <img src={post.imageHome.asset.url} alt="" /> */}
+                  </div>
+                </Tween>
 
-              <div className="home ">
-                <h5>Broadcast Journalist</h5>
-                {/* <h2>{post.title}</h2> */}
-                <h2>Hello, I’m Maya Russell-Smith</h2>
-                <p>
-                  I am a graduate from the broadcast journalism course at City,
-                  University of London, and have varied experience in producing
-                  and editing content for TV.
-                </p>
-                <div className="buttonContainer">
-                  <a
-                    href="#contact"
-                    // className="button1"
-                  >
-                    <Button className="button" variant="contained">
-                      Contact
-                    </Button>
-                  </a>
-                  <a
-                    href={post.link}
-                    target="_blank"
-                    rel="noreferrer"
-                    // className="button2"
-                  >
-                    <Button className="button" variant="outlined">
-                      LinkedIn
-                    </Button>
-                  </a>
+                <div className="home">
+                  <h5>Broadcast Journalist</h5>
+                  {/* <h2>{post.title}</h2> */}
+                  <h2>Hello, I’m Maya Russell-Smith</h2>
+
+                  <p>
+                    I am a graduate from the broadcast journalism course at
+                    City, University of London, and have varied experience in
+                    producing and editing content for TV.
+                  </p>
+
+                  <div className="buttonContainer">
+                    <ButtonMui
+                      link="#contact"
+                      css="button"
+                      variant="contained"
+                      text="Contact"
+                    />
+                    <ButtonMui
+                      link={post.link}
+                      css="button"
+                      variant="outlined"
+                      text="LinkedIn"
+                      target="_blank"
+                    />
+                  </div>
                 </div>
-              </div>
+              </Timeline>
             </div>
             <TabSelectionMobile />
             {/* <TabSelection /> */}

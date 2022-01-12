@@ -3,7 +3,7 @@ import { Form, Input, TextArea } from "semantic-ui-react";
 import emailjs from "emailjs-com";
 import Swal from "sweetalert2";
 import SocialIcons from "./Util/SocialIcons";
-import Button from "@mui/material/Button";
+import ButtonMui from "./Util/ButtonMui";
 
 // import "semantic-ui-css/semantic.min.css";
 
@@ -36,9 +36,9 @@ const Contact = () => {
 
   return (
     <>
-      <div>
+      <div className="contactContainer">
         <div className="contact">
-          <h2>Contact Me</h2>
+          <h2>Get in Touch</h2>
           <Form
             onSubmit={handleOnSubmit}
             name="contact-form"
@@ -79,17 +79,20 @@ const Contact = () => {
               placeholder="Do you know anything about the chamber of secrets?"
               required
               type="textArea"
-              className="formField"
+              className="formField textarea"
             />
 
-            <Button type="submit" className="button" variant="contained">
-              Send an Owl
-            </Button>
+            <ButtonMui
+              type="submit"
+              css="button"
+              variant="contained"
+              text="Send an Owl"
+              target=""
+            />
           </Form>
-          <div className="infoContainer">
-            <SocialIcons />
-          </div>
         </div>
+
+        <SocialIcons />
       </div>
     </>
   );

@@ -1,16 +1,54 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Tv from "./components/Portfolios/Tv";
-import Radio from "./components/Portfolios/Radio";
-import Articles from "./components/Portfolios/Articles";
-import SinglePost from "./components/Blog/SinglePost";
-import SlideShow from "./components/Blog/SlideShow";
-import Post from "./components/Blog/Post";
-import Home from "./components/Home";
+
+import LogoAnimation from "./components/LogoAnimation";
+
 import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+
 import "./App.css";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+const Home = React.lazy(() => {
+  return new Promise((resolve) => setTimeout(resolve, 1 * 2000)).then(() =>
+    import("./components/Home")
+  );
+});
+const Tv = React.lazy(() => {
+  return new Promise((resolve) => setTimeout(resolve, 1 * 2000)).then(() =>
+    import("./components/Portfolios/Tv")
+  );
+});
+const Radio = React.lazy(() => {
+  return new Promise((resolve) => setTimeout(resolve, 1 * 2000)).then(() =>
+    import("./components/Portfolios/Radio")
+  );
+});
+const Articles = React.lazy(() => {
+  return new Promise((resolve) => setTimeout(resolve, 1 * 2000)).then(() =>
+    import("./components/Portfolios/Articles")
+  );
+});
+const SinglePost = React.lazy(() => {
+  return new Promise((resolve) => setTimeout(resolve, 1 * 2000)).then(() =>
+    import("./components/Blog/SinglePost")
+  );
+});
+
+const SlideShow = React.lazy(() => {
+  return new Promise((resolve) => setTimeout(resolve, 1 * 2000)).then(() =>
+    import("./components/Blog/SlideShow")
+  );
+});
+const Post = React.lazy(() => {
+  return new Promise((resolve) => setTimeout(resolve, 1 * 2000)).then(() =>
+    import("./components/Blog/Post")
+  );
+});
+
+const Footer = React.lazy(() => {
+  return new Promise((resolve) => setTimeout(resolve, 1 * 2000)).then(() =>
+    import("./components/Footer")
+  );
+});
 
 function App() {
   const theme = createTheme({
@@ -27,8 +65,8 @@ function App() {
   });
   return (
     <Router>
-      <ThemeProvider theme={theme}>
-        <div>
+      <Suspense fallback={<LogoAnimation />}>
+        <ThemeProvider theme={theme}>
           <Navbar />
           <div className="pageContainer">
             <Switch>
@@ -55,8 +93,8 @@ function App() {
             </Switch>
           </div>
           <Footer />
-        </div>
-      </ThemeProvider>
+        </ThemeProvider>
+      </Suspense>
     </Router>
   );
 }
