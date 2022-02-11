@@ -13,7 +13,7 @@ const PostSection = (props) => {
           <img src={props.mainImage} alt="" />
         </div>
         <div className="text">
-          <p className="alignEnd">
+          <p className="alignEnd mb-5">
             {props.releaseDate.slice(5, 7) === "01"
               ? "January"
               : props.releaseDate.slice(5, 7) === "02"

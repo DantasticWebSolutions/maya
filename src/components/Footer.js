@@ -25,14 +25,14 @@ const Footer = () => {
     <>
       {allPostsData &&
         allPostsData.map((post, index) => (
-          <Tween from={{ x: "+100%", opacity: 0 }} delay={5} duration={0.6}>
+          <Tween from={{ opacity: 0 }} delay={5} duration={0.6}>
             <div className="footerContainer">
               <div id="contact" className="footer">
                 <Contact />
               </div>
               <a
                 target="_blank"
-                href="https://danreact.netlify.app/"
+                href="https://dantastic.netlify.app/"
                 className="poweredBy"
                 rel="noreferrer"
               >

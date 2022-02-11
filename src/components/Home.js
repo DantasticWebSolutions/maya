@@ -56,7 +56,7 @@ export default function Home() {
               //   />
               // }
               >
-                <Tween from={{ x: "+100%", opacity: 0 }} duration={2}>
+                <Tween from={{ opacity: 0 }} duration={1}>
                   <div
                     className="imgSector bubble"
                     style={{

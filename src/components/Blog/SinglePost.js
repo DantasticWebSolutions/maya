@@ -6,20 +6,34 @@ import sanityClient from "../../client.js";
 import BlockContent from "@sanity/block-content-to-react";
 import imageUrlBuilder from "@sanity/image-url";
 import MorePostLikeThis from "./MorePostLikeThis";
+import LogoAnimation from "../LogoAnimation";
 
 const builder = imageUrlBuilder(sanityClient);
 function urlFor(source) {
   return builder.image(source);
 }
+
+// const serializers = {
+//   types: {
+//     figure: ({ node: { asset, caption } }) => {
+//       return <img src={asset} alt={caption} />;
+//     },
+//   },
+// };
+
 const serializers = {
   types: {
-    code: (props) => (
-      <pre data-language={props.node.language}>
-        <code>{props.node.code}</code>
-      </pre>
+    mainImage: (props) => (
+      <figure>
+        <img
+          src={urlFor(props.node.asset).width(600).url()}
+          alt={props.node.alt}
+        />
+      </figure>
     ),
   },
 };
+
 export default function OnePost() {
   const [postData, setPostData] = useState(null);
   const { slug } = useParams();
@@ -49,7 +63,7 @@ export default function OnePost() {
       .catch(console.error);
   }, [slug]);
 
-  if (!postData) return <div>Loading...</div>;
+  if (!postData) return <LogoAnimation />;
 
   return (
     <div className="singlePost">
@@ -66,6 +80,7 @@ export default function OnePost() {
             blocks={postData.description}
             projectId={sanityClient.projectId}
             dataset={sanityClient.dataset}
+            serializers={serializers}
           />
         </div>
       </div>
@@ -73,11 +88,10 @@ export default function OnePost() {
       <div className="descriptionBody">
         <BlockContent
           blocks={postData.body}
+          imageOptions={{ fit: "max" }}
           projectId={sanityClient.projectId}
           dataset={sanityClient.dataset}
           serializers={serializers}
-          className="ingridients"
-          imageOptions={{ w: 320, h: 240, fit: "max" }}
         />
       </div>
 
